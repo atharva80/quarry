@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Browse programs</h1>
+<p class="lead">{{ programs | length }} open programs, newest listed first.
+{% if platforms %}On {% for pl in platforms %}{{ pl.name }} ({{ pl.count }}){{ ", " if not loop.last }}{% endfor %}.{% endif %}</p>
+{% if categories %}<p class="muted small">Categories: {{ categories | join(', ') }}.</p>{% endif %}
+
+<div data-island="browse"></div>
+
+<div id="browse-static" class="table-wrap">
+<table>
+  <thead><tr>
+    <th scope="col">Program</th><th scope="col">Platform</th><th scope="col">Max reward</th>
+    <th scope="col">Categories</th><th scope="col" class="num">In scope</th><th scope="col" class="num">New 30d</th>
+  </tr></thead>
+  <tbody>
+  {% for p in programs %}
+  <tr>
+    <td><a href="{{ p.path }}">{{ p.n }}</a></td>
+    <td>{{ p.pn }}</td>
+    <td>{% if p.b %}{{ p.mx or '—' }}{% else %}VDP{% endif %}</td>
+    <td>{{ p.cat | join(', ') }}</td>
+    <td class="num">{{ p.na }}</td>
+    <td class="num">{{ p.n30 }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

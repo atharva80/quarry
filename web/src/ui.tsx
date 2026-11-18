@@ -12,15 +12,7 @@ export function Chips({ items, cls = "" }: { items: string[]; cls?: string }) {
   );
 }
 
-export function Toggle({
-  on,
-  onClick,
-  children,
-}: {
-  on: boolean;
-  onClick: () => void;
-  children: ComponentChildren;
-}) {
+export function Toggle({ on, onClick, children }: { on: boolean; onClick: () => void; children: ComponentChildren }) {
   return (
     <button type="button" class={`chip-btn${on ? " on" : ""}`} aria-pressed={on} onClick={onClick}>
       {children}
@@ -28,15 +20,7 @@ export function Toggle({
   );
 }
 
-export function Card({
-  p,
-  reasons,
-  actions,
-}: {
-  p: CatalogProgram;
-  reasons?: string[];
-  actions?: ComponentChildren;
-}) {
+export function Card({ p, reasons, actions }: { p: CatalogProgram; reasons?: string[]; actions?: ComponentChildren }) {
   return (
     <article class="card">
       <h3>

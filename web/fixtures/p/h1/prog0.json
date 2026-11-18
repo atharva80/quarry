@@ -1,0 +1,150 @@
+{
+ "id": "h1:prog0",
+ "path": "/p/h1/prog0/",
+ "p": "h1",
+ "pn": "HackerOne",
+ "n": "Program 0",
+ "u": "https://example.com/prog0",
+ "s": "open",
+ "b": 0,
+ "c": 0,
+ "mx": "",
+ "usd": 0,
+ "L": 1748009600,
+ "U": 1790000000,
+ "cat": [
+  "api"
+ ],
+ "t": [
+  "saas"
+ ],
+ "na": 38,
+ "np": 1,
+ "n7": 1,
+ "n14": 1,
+ "n30": 3,
+ "w30": 0,
+ "la": 1790000000,
+ "sc": [
+  "*.prog0.com",
+  "api.prog0.com"
+ ],
+ "rules": {
+  "scanning": {
+   "value": "limited",
+   "quote": "Automated scanning is permitted at low rates.",
+   "section": "Policy"
+  },
+  "rate_limit": {
+   "value": "unclear",
+   "quote": "",
+   "section": "Testing"
+  },
+  "required_header": {
+   "value": "X-Bug-Bounty: <username>",
+   "quote": "Add the header X-Bug-Bounty.",
+   "section": "Testing"
+  },
+  "test_accounts": {
+   "value": "Self-register",
+   "quote": "Create your own account.",
+   "section": "Testing"
+  },
+  "excluded_classes": {
+   "value": [
+    "self-XSS",
+    "clickjacking"
+   ],
+   "quote": "Self-XSS is out.",
+   "section": "Out of scope"
+  },
+  "safe_harbour": {
+   "value": "yes",
+   "quote": "We will not pursue legal action.",
+   "section": "Safe harbour"
+  },
+  "bounty_table": {
+   "value": "Critical $5k-$10k",
+   "quote": "Critical: $5,000-$10,000",
+   "section": "Rewards"
+  },
+  "disclosure": {
+   "value": "unclear",
+   "quote": "",
+   "section": "Disclosure"
+  },
+  "model": "x",
+  "extracted_at": 1790000000,
+  "policy_hash": "ab"
+ },
+ "age": 14,
+ "assets": [
+  {
+   "i": "*.prog0.com",
+   "t": "wildcard",
+   "c": "wildcard",
+   "in": true,
+   "paid": true,
+   "tier": "Tier 1",
+   "at": 1789740800
+  },
+  {
+   "i": "api.prog0.com",
+   "t": "url",
+   "c": "api",
+   "in": true,
+   "paid": true,
+   "tier": "Tier 2",
+   "at": 0
+  },
+  {
+   "i": "https://app.prog0.com/login",
+   "t": "url",
+   "c": "web",
+   "in": true,
+   "paid": false,
+   "tier": "",
+   "at": 1786544000
+  },
+  {
+   "i": "com.prog0.app",
+   "t": "android",
+   "c": "android",
+   "in": true,
+   "paid": true,
+   "tier": "",
+   "at": 1790000000
+  },
+  {
+   "i": "old.prog0.com",
+   "t": "url",
+   "c": "web",
+   "in": false,
+   "paid": false,
+   "tier": "",
+   "at": 0
+  }
+ ],
+ "rules_source": "https://example.com/prog0/policy",
+ "rules_status": "extracted",
+ "changes": [
+  {
+   "id": "a1",
+   "ts": 1789913600,
+   "kind": "SCOPE",
+   "prio": 4,
+   "pid": "h1:prog0",
+   "title": "Program 0",
+   "body": "",
+   "summary": "2 assets added"
+  }
+ ],
+ "hunter": {
+  "reputation_required": 0,
+  "submission_fee": "",
+  "resolved_reports": 12,
+  "response_efficiency_pct": 90
+ },
+ "listed_iso": "2026-03-01T00:00:00Z",
+ "updated_iso": "2026-11-18T00:00:00Z"
+}

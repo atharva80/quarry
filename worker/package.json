@@ -10,6 +10,7 @@
     "types": "wrangler types"
   },
   "dependencies": {
+    "@block65/webcrypto-web-push": "^2.0.0",
     "@modelcontextprotocol/server": "2.4.0",
     "agents": "0.33.0",
     "hono": "4.13.19",

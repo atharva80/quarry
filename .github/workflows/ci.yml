@@ -1,0 +1,29 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with: { python-version: "3.12" }
+      - run: uv sync --frozen
+      - run: uv run ruff check pipeline evals
+      - run: uv run pytest -q
+  typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "24", cache: npm }
+      - run: npm ci --ignore-scripts && npm rebuild esbuild workerd
+      - run: npx biome check worker/src web/src ranking
+      - run: npx tsc -p worker --noEmit
+      - run: npx tsc -p web --noEmit
+      - run: npx vitest run --root worker
+      - run: npm run build -w web

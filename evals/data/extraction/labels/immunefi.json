@@ -1,0 +1,1014 @@
+[
+ {
+  "program_id": "immunefi:hydration",
+  "hash": "8ac0456995fa1f8d",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "ssl/tls best practices",
+    "user enumeration",
+    "automated scanner reports",
+    "ddos",
+    "theoretical impacts",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "stablecoin depegging"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:berachain",
+  "hash": "4cfa75e16d385eca",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks",
+    "theoretical user interactions"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:extrafinance",
+  "hash": "52ed1533ea893880",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:sparklend",
+  "hash": "27e33ba3ceb38323",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "user enumeration",
+    "automated scanner reports",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:pareto",
+  "hash": "7b889ed608d1532f",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:raydium",
+  "hash": "1438ff04892e2a83",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:gammaswap",
+  "hash": "9ba1645fd49b7a42",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:arkadiko",
+  "hash": "cd47a9c76b59182c",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "user enumeration",
+    "automated scanner reports",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:ondofinance",
+  "hash": "bf275ca6d66a228a",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:1inch-aqua",
+  "hash": "8cbb80b1d0cd293f",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "No prohibited-activities section, scanning not addressed.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:rootstocklabs",
+  "hash": "034f6ae33cc0adb1",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "user enumeration",
+    "automated scanner reports",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:ethena",
+  "hash": "88827d87b921e5a8",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "user enumeration",
+    "automated scanner reports",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:blockpinetwork",
+  "hash": "5795dfef61c18fa1",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "ssl/tls best practices",
+    "user enumeration",
+    "automated scanner reports",
+    "ddos",
+    "theoretical impacts",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "stablecoin depegging"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:instadapp",
+  "hash": "02db199940352774",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "user enumeration",
+    "automated scanner reports",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:mtpelerin",
+  "hash": "060e54bfe3da7c7a",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "csrf on logout",
+    "missing security headers",
+    "spf/dmarc",
+    "user enumeration",
+    "automated scanner reports",
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "privileged address access",
+    "leaked keys",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited. Bounty table has no amounts.",
+  "second_pass_changed": [
+   "bounty_table"
+  ]
+ },
+ {
+  "program_id": "immunefi:ipor",
+  "hash": "e9282894a4ab422b",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "low",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited. Reward given as payout formula, not table.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:Aevo",
+  "hash": "509f0ef948883b74",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:symbiosis",
+  "hash": "49e7d891faccb73b",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited. Bounty table has no amounts.",
+  "second_pass_changed": [
+   "bounty_table"
+  ]
+ },
+ {
+  "program_id": "immunefi:axelarnetwork",
+  "hash": "088ee5893dec6def",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:fluxfinance",
+  "hash": "15db0d9125b617e9",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:yearnfinance",
+  "hash": "a3a50d00045d6e50",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:charm",
+  "hash": "c847ccbdb258c417",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited. Bounty table has no amounts.",
+  "second_pass_changed": [
+   "bounty_table"
+  ]
+ },
+ {
+  "program_id": "immunefi:gmtrade",
+  "hash": "8d66d71193466232",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:katana",
+  "hash": "55f06a8288da385e",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:folksfinance",
+  "hash": "5f4dd0edde140a10",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "No prohibited-activities section, scanning not addressed.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:staderforeth",
+  "hash": "2e2aa718021c3e50",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:1inch-aqua-improvement",
+  "hash": "f099ba25e72eaaef",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "low",
+  "notes": "No prohibited-activities section, scanning not addressed. Improvement-suggestion program with a single goodwill range.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:ichi",
+  "hash": "d9ea8aec4ce08ae1",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited. Bounty table has no amounts.",
+  "second_pass_changed": [
+   "bounty_table"
+  ]
+ },
+ {
+  "program_id": "immunefi:zksync-os",
+  "hash": "52ec5b130a55298a",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Automated testing of services that generates significant amounts of traffic"
+  },
+  "confidence": "high",
+  "notes": "Only a qualified ban on automated testing that generates significant traffic, labelled limited.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "immunefi:utix",
+  "hash": "60fb96d773fff2e7",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "social engineering",
+    "best practices",
+    "feature requests",
+    "leaked keys",
+    "privileged address access",
+    "stablecoin depegging",
+    "test files",
+    "secrets in github",
+    "oracle data",
+    "51% attacks",
+    "lack of liquidity",
+    "sybil attacks",
+    "centralization risks"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "No prohibited-activities section, scanning not addressed.",
+  "second_pass_changed": []
+ }
+]

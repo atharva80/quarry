@@ -189,7 +189,7 @@ def normalise(state: dict, targets: dict | None = None, now: float | None = None
 
 def _program(plat: str, key: str, r: dict, seen: dict, now: float) -> dict | None:
     raw_assets = r.get("assets") or {}
-    added, aupd, tiers = r.get("added") or {}, r.get("aupd") or {}, r.get("tier") or {}
+    added, tiers = r.get("added") or {}, r.get("tier") or {}
     rtab = r.get("rtab") or []
     rows_by_id = {row[5]: row[0] for row in rtab if len(row) > 5}
     assets = []
@@ -200,7 +200,7 @@ def _program(plat: str, key: str, r: dict, seen: dict, now: float) -> dict | Non
         ad = max(ts(added.get(k), now), seen.get((plat, key, ident), 0))
         tier = tiers.get(k, "")
         tier = rows_by_id.get(tier, "") if rows_by_id else str(tier or "")
-        if not tier and len(a) > 2 and a[2]:
+        if not tier and len(a) > 2 and a[2] and str(a[2]).lower() not in ("none", "null"):
             tier = str(a[2]).capitalize()
         paid = a[1] is True or (a[1] is None and bool(r.get("bounty")))
         assets.append({

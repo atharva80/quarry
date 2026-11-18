@@ -7,13 +7,62 @@
   "workers_dev": true,
   "preview_urls": false,
   "account_id": "c413669eec93af689722b3199813448b",
-  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*", "/mcp"] },
+
+  // Static-first: assets are free and keep serving after the 100k/day request cap.
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/mcp", "/mcp/*"],
+    "not_found_handling": "404-page"
+  },
+
+  "rules": [{ "type": "Text", "globs": ["**/*.md"], "fallthrough": true }],
+
   "ai": { "binding": "AI" },
-  "observability": { "enabled": true, "head_sampling_rate": 1 },
-  "durable_objects": { "bindings": [{ "name": "BENCH_AGENT", "class_name": "BenchAgent" }] },
-  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["BenchAgent"] }],
-  "d1_databases": [
-    { "binding": "DB", "database_name": "quarry-db", "database_id": "092c53fc-f0aa-4363-8347-2bd75c5dc4bd" },
-    { "binding": "SCRATCH", "database_name": "quarry-db-scratch", "database_id": "61f7c3c6-5499-4c94-a718-b8bcbe6535b9" }
-  ]
+  "d1_databases": [{ "binding": "DB", "database_name": "quarry-db", "database_id": "092c53fc-f0aa-4363-8347-2bd75c5dc4bd" }],
+
+  "durable_objects": {
+    "bindings": [
+      { "name": "QUARRY_AGENT", "class_name": "QuarryAgent" },
+      { "name": "BUDGET", "class_name": "BudgetDO" }
+    ]
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["BenchAgent"] },
+    { "tag": "v2", "new_sqlite_classes": ["QuarryAgent", "BudgetDO"], "deleted_classes": ["BenchAgent"] }
+  ],
+
+  "ratelimits": [
+    { "name": "RL_API", "namespace_id": "71001", "simple": { "limit": 60, "period": 60 } },
+    { "name": "RL_CHAT", "namespace_id": "71002", "simple": { "limit": 8, "period": 60 } },
+    { "name": "RL_MCP", "namespace_id": "71003", "simple": { "limit": 60, "period": 60 } },
+    { "name": "RL_ALERTS", "namespace_id": "71004", "simple": { "limit": 10, "period": 60 } }
+  ],
+
+  // Alerts dispatch, hourly (Free plan: 5 cron triggers per account; this uses 1).
+  "triggers": { "crons": ["23 * * * *"] },
+
+  // Workers Logs on Free: 200k events/day. Errors + a 1% sample of request summaries, no invocation logs.
+  "observability": { "enabled": true, "head_sampling_rate": 1, "logs": { "invocation_logs": false } },
+
+  "vars": {
+    "SITE_URL": "https://quarry.quarry-worker.workers.dev",
+    "LLM_BASE_URL": "https://api.commandcode.ai/provider/v1",
+    "LLM_MODEL": "deepseek/deepseek-v4.1-flash",
+    "LLM_API_STYLE": "responses",
+    "LLM_GATEWAY_PROVIDER": "custom-quarry-commandcode",
+    "AI_GATEWAY_ID": "quarry",
+    "FALLBACK_MODEL": "@cf/google/gemma-4-26b-a4b-it",
+    "LLM_PRICE_IN": "0.30",
+    "LLM_PRICE_OUT": "1.20",
+    "FALLBACK_PRICE_IN": "0.10",
+    "FALLBACK_PRICE_OUT": "0.30",
+    "DAILY_LLM_USD_CAP": "0.50",
+    "FALLBACK_NEURON_CAP": "8000",
+    "CHAT_DAILY_CAP": "40",
+    "TURNSTILE_SITEKEY": "",
+    "TELEGRAM_BOT_USERNAME": "",
+    "VAPID_PUBLIC_KEY": "",
+    "VAPID_SUBJECT": "https://github.com/atharva80/quarry"
+  }
 }

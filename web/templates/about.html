@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>About Quarry</h1>
+<p class="lead">Quarry helps bug-bounty hunters find the program worth their next hours: fresh scope, clear rules, ranked by your skills. It reads public program data and never touches targets.</p>
+
+<h2>How it works</h2>
+<div class="pre-line">{{ architecture }}</div>
+
+<h2>Limits</h2>
+<p>What Quarry does not do, and what that means for you.</p>
+<div class="table-wrap">
+<table>
+  <thead><tr><th scope="col">Limit</th><th scope="col">What it means</th></tr></thead>
+  <tbody>
+  {% for row in limits %}<tr><td>{{ row.limit }}</td><td>{{ row.consequence }}</td></tr>{% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>Open source</h2>
+<p>Code and data contract: <a href="https://github.com/atharva80/quarry">github.com/atharva80/quarry</a>. Rules summaries are machine-extracted; always read the original policy before testing.</p>
+{% endblock %}

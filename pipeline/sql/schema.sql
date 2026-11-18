@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS programs (
   n_in_scope INTEGER,
   n_paid INTEGER,
   new_7d INTEGER,
+  new_14d INTEGER,
   new_30d INTEGER,
   wild_new_30d INTEGER,
   latest_added_at INTEGER,
@@ -62,6 +63,7 @@ CREATE TABLE IF NOT EXISTS policies (
   fetched_at INTEGER,
   version TEXT,               -- platform version id / etag / content hash
   hash TEXT NOT NULL,
+  program_hash TEXT,          -- the program's content hash when this policy was fetched
   text TEXT NOT NULL          -- normalised markdown, untrusted third-party text
 );
 

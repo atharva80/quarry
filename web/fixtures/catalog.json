@@ -1,0 +1,752 @@
+{
+ "generated": "2026-11-19T01:17:00Z",
+ "source_updated": "2026-11-19T01:10:00Z",
+ "programs": [
+  {
+   "id": "h1:prog0",
+   "path": "/p/h1/prog0/",
+   "p": "h1",
+   "pn": "HackerOne",
+   "n": "Program 0",
+   "u": "https://example.com/prog0",
+   "s": "open",
+   "b": 0,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1748009600,
+   "U": 1790000000,
+   "cat": [
+    "api"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 38,
+   "np": 1,
+   "n7": 1,
+   "n14": 1,
+   "n30": 3,
+   "w30": 0,
+   "la": 1790000000,
+   "sc": [
+    "*.prog0.com",
+    "api.prog0.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 14
+  },
+  {
+   "id": "bugcrowd:prog1",
+   "path": "/p/bugcrowd/prog1/",
+   "p": "bugcrowd",
+   "pn": "Bugcrowd",
+   "n": "Program 1",
+   "u": "https://example.com/prog1",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$500",
+   "usd": 500,
+   "L": 1748355200,
+   "U": 1789996400,
+   "cat": [
+    "ios",
+    "network"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 35,
+   "np": 8,
+   "n7": 0,
+   "n14": 0,
+   "n30": 2,
+   "w30": 0,
+   "la": 1789913600,
+   "sc": [
+    "*.prog1.com",
+    "api.prog1.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 407
+  },
+  {
+   "id": "intigriti:prog2",
+   "path": "/p/intigriti/prog2/",
+   "p": "intigriti",
+   "pn": "Intigriti",
+   "n": "Program 2",
+   "u": "https://example.com/prog2",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$500",
+   "usd": 500,
+   "L": 1788617600,
+   "U": 1789992800,
+   "cat": [
+    "api",
+    "contract",
+    "wildcard"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 5,
+   "np": 2,
+   "n7": 3,
+   "n14": 3,
+   "n30": 5,
+   "w30": 1,
+   "la": 1789827200,
+   "sc": [
+    "*.prog2.com",
+    "api.prog2.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 44
+  },
+  {
+   "id": "ywh:prog3",
+   "path": "/p/ywh/prog3/",
+   "p": "ywh",
+   "pn": "YesWeHack",
+   "n": "Program 3",
+   "u": "https://example.com/prog3",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$2,000",
+   "usd": 2000,
+   "L": 1755699200,
+   "U": 1789989200,
+   "cat": [
+    "code",
+    "web"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 28,
+   "np": 6,
+   "n7": 3,
+   "n14": 3,
+   "n30": 5,
+   "w30": 0,
+   "la": 1789740800,
+   "sc": [
+    "*.prog3.com",
+    "api.prog3.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 591
+  },
+  {
+   "id": "h1:prog4",
+   "path": "/p/h1/prog4/",
+   "p": "h1",
+   "pn": "HackerOne",
+   "n": "Program 4",
+   "u": "https://example.com/prog4",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1746195200,
+   "U": 1789985600,
+   "cat": [
+    "api",
+    "network"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 14,
+   "np": 4,
+   "n7": 0,
+   "n14": 0,
+   "n30": 0,
+   "w30": 0,
+   "la": 1789654400,
+   "sc": [
+    "*.prog4.com",
+    "api.prog4.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 447
+  },
+  {
+   "id": "bugcrowd:prog5",
+   "path": "/p/bugcrowd/prog5/",
+   "p": "bugcrowd",
+   "pn": "Bugcrowd",
+   "n": "Program 5",
+   "u": "https://example.com/prog5",
+   "s": "open",
+   "b": 0,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1758896000,
+   "U": 1789982000,
+   "cat": [
+    "android",
+    "ios",
+    "network"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 35,
+   "np": 9,
+   "n7": 3,
+   "n14": 3,
+   "n30": 5,
+   "w30": 0,
+   "la": 1789568000,
+   "sc": [
+    "*.prog5.com",
+    "api.prog5.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 599
+  },
+  {
+   "id": "intigriti:prog6",
+   "path": "/p/intigriti/prog6/",
+   "p": "intigriti",
+   "pn": "Intigriti",
+   "n": "Program 6",
+   "u": "https://example.com/prog6",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1775484800,
+   "U": 1789978400,
+   "cat": [
+    "contract"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 21,
+   "np": 8,
+   "n7": 1,
+   "n14": 1,
+   "n30": 3,
+   "w30": 0,
+   "la": 1789481600,
+   "sc": [
+    "*.prog6.com",
+    "api.prog6.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 583
+  },
+  {
+   "id": "ywh:prog7",
+   "path": "/p/ywh/prog7/",
+   "p": "ywh",
+   "pn": "YesWeHack",
+   "n": "Program 7",
+   "u": "https://example.com/prog7",
+   "s": "paused",
+   "b": 1,
+   "c": 0,
+   "mx": "$50,000",
+   "usd": 50000,
+   "L": 1778940800,
+   "U": 1789974800,
+   "cat": [
+    "android"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 5,
+   "np": 7,
+   "n7": 1,
+   "n14": 1,
+   "n30": 2,
+   "w30": 0,
+   "la": 1789395200,
+   "sc": [
+    "*.prog7.com",
+    "api.prog7.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 496
+  },
+  {
+   "id": "h1:prog8",
+   "path": "/p/h1/prog8/",
+   "p": "h1",
+   "pn": "HackerOne",
+   "n": "Program 8",
+   "u": "https://example.com/prog8",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1788185600,
+   "U": 1789971200,
+   "cat": [
+    "contract"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 19,
+   "np": 6,
+   "n7": 3,
+   "n14": 3,
+   "n30": 3,
+   "w30": 0,
+   "la": 1789308800,
+   "sc": [
+    "*.prog8.com",
+    "api.prog8.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 122
+  },
+  {
+   "id": "bugcrowd:prog9",
+   "path": "/p/bugcrowd/prog9/",
+   "p": "bugcrowd",
+   "pn": "Bugcrowd",
+   "n": "Program 9",
+   "u": "https://example.com/prog9",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$10,000",
+   "usd": 10000,
+   "L": 1765289600,
+   "U": 1789967600,
+   "cat": [
+    "web"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 33,
+   "np": 3,
+   "n7": 1,
+   "n14": 1,
+   "n30": 3,
+   "w30": 0,
+   "la": 1789222400,
+   "sc": [
+    "*.prog9.com",
+    "api.prog9.com"
+   ],
+   "rules": null,
+   "age": 318
+  },
+  {
+   "id": "intigriti:prog10",
+   "path": "/p/intigriti/prog10/",
+   "p": "intigriti",
+   "pn": "Intigriti",
+   "n": "Program 10",
+   "u": "https://example.com/prog10",
+   "s": "open",
+   "b": 0,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1742566400,
+   "U": 1789964000,
+   "cat": [
+    "wildcard"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 3,
+   "np": 3,
+   "n7": 0,
+   "n14": 0,
+   "n30": 2,
+   "w30": 1,
+   "la": 1789136000,
+   "sc": [
+    "*.prog10.com",
+    "api.prog10.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 299
+  },
+  {
+   "id": "ywh:prog11",
+   "path": "/p/ywh/prog11/",
+   "p": "ywh",
+   "pn": "YesWeHack",
+   "n": "Program 11",
+   "u": "https://example.com/prog11",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1758118400,
+   "U": 1789960400,
+   "cat": [
+    "contract",
+    "ios",
+    "wildcard"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 9,
+   "np": 6,
+   "n7": 1,
+   "n14": 1,
+   "n30": 2,
+   "w30": 1,
+   "la": 1789049600,
+   "sc": [
+    "*.prog11.com",
+    "api.prog11.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 472
+  },
+  {
+   "id": "h1:prog12",
+   "path": "/p/h1/prog12/",
+   "p": "h1",
+   "pn": "HackerOne",
+   "n": "Program 12",
+   "u": "https://example.com/prog12",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$50,000",
+   "usd": 50000,
+   "L": 1745072000,
+   "U": 1789956800,
+   "cat": [
+    "code",
+    "contract",
+    "ios"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 18,
+   "np": 6,
+   "n7": 0,
+   "n14": 0,
+   "n30": 2,
+   "w30": 0,
+   "la": 1788963200,
+   "sc": [
+    "*.prog12.com",
+    "api.prog12.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 244
+  },
+  {
+   "id": "bugcrowd:prog13",
+   "path": "/p/bugcrowd/prog13/",
+   "p": "bugcrowd",
+   "pn": "Bugcrowd",
+   "n": "Program 13",
+   "u": "https://example.com/prog13",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$50,000",
+   "usd": 50000,
+   "L": 1759932800,
+   "U": 1789953200,
+   "cat": [
+    "api",
+    "code"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 1,
+   "np": 6,
+   "n7": 1,
+   "n14": 1,
+   "n30": 3,
+   "w30": 0,
+   "la": 1788876800,
+   "sc": [
+    "*.prog13.com",
+    "api.prog13.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 323
+  },
+  {
+   "id": "intigriti:prog14",
+   "path": "/p/intigriti/prog14/",
+   "p": "intigriti",
+   "pn": "Intigriti",
+   "n": "Program 14",
+   "u": "https://example.com/prog14",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$50,000",
+   "usd": 50000,
+   "L": 1760537600,
+   "U": 1789949600,
+   "cat": [
+    "code"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 30,
+   "np": 5,
+   "n7": 0,
+   "n14": 0,
+   "n30": 0,
+   "w30": 0,
+   "la": 1788790400,
+   "sc": [
+    "*.prog14.com",
+    "api.prog14.com"
+   ],
+   "rules": {
+    "scan": "no"
+   },
+   "age": 362
+  },
+  {
+   "id": "ywh:prog15",
+   "path": "/p/ywh/prog15/",
+   "p": "ywh",
+   "pn": "YesWeHack",
+   "n": "Program 15",
+   "u": "https://example.com/prog15",
+   "s": "open",
+   "b": 0,
+   "c": 0,
+   "mx": "",
+   "usd": 0,
+   "L": 1784556800,
+   "U": 1789946000,
+   "cat": [
+    "android",
+    "contract",
+    "ios"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 2,
+   "np": 5,
+   "n7": 0,
+   "n14": 0,
+   "n30": 2,
+   "w30": 0,
+   "la": 1788704000,
+   "sc": [
+    "*.prog15.com",
+    "api.prog15.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 468
+  },
+  {
+   "id": "h1:prog16",
+   "path": "/p/h1/prog16/",
+   "p": "h1",
+   "pn": "HackerOne",
+   "n": "Program 16",
+   "u": "https://example.com/prog16",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$2,000",
+   "usd": 2000,
+   "L": 1757254400,
+   "U": 1789942400,
+   "cat": [
+    "contract",
+    "wildcard"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 39,
+   "np": 4,
+   "n7": 0,
+   "n14": 0,
+   "n30": 1,
+   "w30": 1,
+   "la": 1788617600,
+   "sc": [
+    "*.prog16.com",
+    "api.prog16.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 387
+  },
+  {
+   "id": "bugcrowd:prog17",
+   "path": "/p/bugcrowd/prog17/",
+   "p": "bugcrowd",
+   "pn": "Bugcrowd",
+   "n": "Program 17",
+   "u": "https://example.com/prog17",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$50,000",
+   "usd": 50000,
+   "L": 1745676800,
+   "U": 1789938800,
+   "cat": [
+    "web"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 15,
+   "np": 10,
+   "n7": 0,
+   "n14": 0,
+   "n30": 1,
+   "w30": 0,
+   "la": 1788531200,
+   "sc": [
+    "*.prog17.com",
+    "api.prog17.com"
+   ],
+   "rules": {
+    "scan": "yes",
+    "rl": "5 req/s",
+    "hdr": true
+   },
+   "age": 245
+  },
+  {
+   "id": "intigriti:prog18",
+   "path": "/p/intigriti/prog18/",
+   "p": "intigriti",
+   "pn": "Intigriti",
+   "n": "Program 18",
+   "u": "https://example.com/prog18",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$10,000",
+   "usd": 10000,
+   "L": 1761488000,
+   "U": 1789935200,
+   "cat": [
+    "api",
+    "contract"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 22,
+   "np": 10,
+   "n7": 0,
+   "n14": 0,
+   "n30": 0,
+   "w30": 0,
+   "la": 1788444800,
+   "sc": [
+    "*.prog18.com",
+    "api.prog18.com"
+   ],
+   "rules": null,
+   "age": 449
+  },
+  {
+   "id": "ywh:prog19",
+   "path": "/p/ywh/prog19/",
+   "p": "ywh",
+   "pn": "YesWeHack",
+   "n": "Program 19",
+   "u": "https://example.com/prog19",
+   "s": "open",
+   "b": 1,
+   "c": 0,
+   "mx": "$2,000",
+   "usd": 2000,
+   "L": 1750083200,
+   "U": 1789931600,
+   "cat": [
+    "wildcard"
+   ],
+   "t": [
+    "saas"
+   ],
+   "na": 18,
+   "np": 3,
+   "n7": 0,
+   "n14": 0,
+   "n30": 2,
+   "w30": 1,
+   "la": 1788358400,
+   "sc": [
+    "*.prog19.com",
+    "api.prog19.com"
+   ],
+   "rules": null,
+   "age": 35
+  }
+ ]
+}

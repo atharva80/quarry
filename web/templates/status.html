@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block content %}
+<h1>Status</h1>
+<p class="lead">Pipeline health, data freshness and service quotas.</p>
+
+{% for key, title in [('pipeline', 'Pipeline'), ('freshness', 'Data freshness'), ('quotas', 'Quotas')] %}
+{% if status[key] %}
+<h2>{{ title }}</h2>
+{{ m.kv(status[key]) }}
+{% endif %}
+{% endfor %}
+
+{% if status.history %}
+<h2>History</h2>
+{% set cols = status.history[0].keys() | list %}
+<div class="table-wrap"><table>
+  <thead><tr>{% for c in cols %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for row in status.history %}<tr>{% for c in cols %}<td>{{ row[c] if row[c] is not none else '—' }}</td>{% endfor %}</tr>{% endfor %}
+  </tbody>
+</table></div>
+{% endif %}
+{% endblock %}

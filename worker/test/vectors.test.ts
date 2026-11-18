@@ -4,7 +4,10 @@ import { dotsJS, type Matrix, quantiseQuery, topK, WasmDots } from "../src/vecto
 
 function randomMatrix(n: number, d: number, seed = 1): Matrix {
   let s = seed;
-  const rnd = () => ((s = (s * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff) * 2 - 1;
+  const rnd = () => {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    return (s / 0x7fffffff) * 2 - 1;
+  };
   const data = new Int8Array(n * d);
   for (let i = 0; i < data.length; i++) data[i] = Math.round(rnd() * 127);
   const scales = new Float32Array(n).fill(1 / 127);

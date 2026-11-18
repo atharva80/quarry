@@ -49,7 +49,7 @@ def program_row(p: dict, rules: str | None = None, rules_hash: str | None = None
         "reward_max": p["reward_max"] or None, "max_usd": p["max_usd"], "listed_at": p["listed_at"] or None,
         "updated_at": p["updated_at"] or None, "scope_changed_at": p["scope_changed_at"] or None,
         "categories": " ".join(p["categories"]), "tags": json.dumps(p["tags"], ensure_ascii=False),
-        "n_in_scope": p["n_in_scope"], "n_paid": p["n_paid"], "new_7d": p["new_7d"], "new_30d": p["new_30d"],
+        "n_in_scope": p["n_in_scope"], "n_paid": p["n_paid"], "new_7d": p["new_7d"], "new_14d": p["new_14d"], "new_30d": p["new_30d"],
         "wild_new_30d": p["wild_new_30d"], "latest_added_at": p["latest_added_at"] or None, "hash": p["hash"],
         "rules": rules, "rules_hash": rules_hash,
     }
@@ -57,7 +57,7 @@ def program_row(p: dict, rules: str | None = None, rules_hash: str | None = None
 
 def diff_key(p: dict) -> str:
     """What decides whether a program row must be rewritten: content, plus the time-relative counters."""
-    return f"{p['hash']}:{p['new_7d']}:{p['new_30d']}:{p['wild_new_30d']}"
+    return f"{p['hash']}:{p['new_7d']}:{p['new_14d']}:{p['new_30d']}:{p['wild_new_30d']}"
 
 
 @dataclass
@@ -168,5 +168,5 @@ def execute(db: str, statements: list[str], chunk: int = 2000) -> ExecResult:
 
 
 def current_programs(db: str) -> dict[str, tuple[str, str]]:
-    rows = query(db, "SELECT id, hash, new_7d, new_30d, wild_new_30d FROM programs")
-    return {r["id"]: (r["hash"], f"{r['hash']}:{r['new_7d']}:{r['new_30d']}:{r['wild_new_30d']}") for r in rows}
+    rows = query(db, "SELECT id, hash, new_7d, new_14d, new_30d, wild_new_30d FROM programs")
+    return {r["id"]: (r["hash"], f"{r['hash']}:{r['new_7d']}:{r['new_14d']}:{r['new_30d']}:{r['wild_new_30d']}") for r in rows}

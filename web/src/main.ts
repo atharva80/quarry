@@ -1,3 +1,4 @@
+import "./app.css";
 
 type Loader = () => Promise<{ default: (el: HTMLElement) => void }>;
 
@@ -11,7 +12,6 @@ const ISLANDS: Record<string, Loader> = {
   alerts: () => import("./islands/alerts"),
 };
 
-
 function boot() {
   for (const el of document.querySelectorAll<HTMLElement>("[data-island]")) {
     const load = ISLANDS[el.dataset.island ?? ""];
@@ -22,7 +22,7 @@ function boot() {
         el.setAttribute("data-island-error", "1");
       });
   }
-  if ("serviceWorker" in navigator && !document.querySelector('[data-island="alerts"]')) {
+  if ("serviceWorker" in navigator) {
     navigator.serviceWorker.register("/sw.js").catch(() => {});
   }
 }

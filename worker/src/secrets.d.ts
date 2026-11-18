@@ -12,3 +12,8 @@ interface Env extends QuarrySecrets {}
 declare namespace Cloudflare {
   interface Env extends QuarrySecrets {}
 }
+
+declare module "*.md" {
+  const text: string;
+  export default text;
+}

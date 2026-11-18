@@ -1,0 +1,54 @@
+{% set nav = [('/', 'For you'), ('/browse/', 'Browse'), ('/changes/', 'Changes'), ('/chat/', 'Chat'), ('/alerts/', 'Alerts'), ('/about/', 'About')] -%}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }}{% if page.path != '/' %} · {{ site.name }}{% endif %}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ page.canonical }}">
+<meta name="theme-color" content="#0b5cad">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:url" content="{{ page.canonical }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="{{ site.name }}: all changes" href="/feeds/all.xml">
+<link rel="stylesheet" href="/assets/app.css">
+<script type="module" src="/assets/app.js"></script>
+{% if site.analytics_token %}<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ site.analytics_token }}"}'></script>{% endif %}
+{% block head %}{% endblock %}
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="in">
+    <a class="brand" href="/">{{ site.name }}</a>
+    <nav aria-label="Main">
+      <ul>
+        {% for href, label in nav %}
+        <li><a href="{{ href }}"{% if (href == '/' and page.path == '/') or (href != '/' and page.path.startswith(href)) %} aria-current="page"{% endif %}>{{ label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+<footer>
+  <div class="in">
+    <div>Data from bbwatch, updated <time datetime="{{ site.source_updated }}">{{ site.source_updated }}</time>. Site built {{ site.generated }}.</div>
+    <ul>
+      <li><a href="/privacy/">Privacy</a></li>
+      <li><a href="/status/">Status</a></li>
+      <li><a href="https://github.com/atharva80/quarry">GitHub</a></li>
+      <li><a href="/feeds/">Feeds</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

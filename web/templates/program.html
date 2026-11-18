@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% set rule_fields = [
+  ('scanning', 'Automated scanning'), ('rate_limit', 'Rate limit'), ('required_header', 'Required header'),
+  ('test_accounts', 'Test accounts'), ('excluded_classes', 'Excluded vulnerability classes'),
+  ('safe_harbour', 'Safe harbour'), ('bounty_table', 'Bounty table'), ('disclosure', 'Disclosure')
+] %}
+{% block content %}
+<h1>{{ p.n }}</h1>
+<p class="meta">
+  {{ p.pn }} {{ m.state_badge(p.s) }}
+  {% if p.b %}{{ m.badge('bounty', 'ok') }}{% else %}{{ m.badge('VDP') }}{% endif %}
+  {% if p.c %}{{ m.badge('contest') }}{% endif %}
+  · max reward {{ p.mx or 'n/a' }}
+  · listed {{ p.listed_iso[:10] if p.listed_iso else '—' }}
+  · {{ p.na }} in scope
+</p>
+<p><a href="{{ p.u }}" rel="noopener noreferrer">Open on {{ p.pn }}</a>{% if p.updated_iso %} · updated {{ p.updated_iso[:10] }}{% endif %}</p>
+{% if p.cat %}<ul class="chips">{% for c in p.cat %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
+
+<div data-island="program-tools" data-id="{{ p.id }}" data-path="/data/p/{{ p.p }}/{{ p.id[(p.p | length) + 1:] }}.json"></div>
+
+<h2 id="rules">Rules</h2>
+<div class="panel">
+{% if p.rules_status == 'not_available' %}
+  <p>Rules not available yet for this platform.{% if p.rules_source %} Read the <a href="{{ p.rules_source }}" rel="noopener noreferrer">policy on {{ p.pn }}</a>.{% endif %}</p>
+{% elif p.rules_status == 'extracted' and p.rules %}
+  <p class="muted small">Extracted automatically from the policy; every quote is checked against the policy text.
+  {% if p.rules_source %}<a href="{{ p.rules_source }}" rel="noopener noreferrer">Read the full policy</a>.{% endif %}</p>
+  <div class="rules">
+  {% for key, label in rule_fields %}
+    {% set f = p.rules[key] %}
+    <div class="rule">
+      <h3>{{ label }}</h3>
+      {% if not f %}
+        <p class="muted">—</p>
+      {% else %}
+        {% set v = f.value %}
+        {% if v == 'unclear' %}
+          <p>Unclear — read § {{ f.section or 'Policy' }} of the policy</p>
+        {% else %}
+          <p><strong>{% if v is string %}{{ v }}{% elif v %}{{ v | join(', ') }}{% else %}none stated{% endif %}</strong></p>
+        {% endif %}
+        {% if f.quote %}<blockquote>{{ f.quote }}<footer>§ {{ f.section }}</footer></blockquote>{% endif %}
+      {% endif %}
+    </div>
+  {% endfor %}
+  </div>
+{% else %}
+  <p>Rules extraction pending.{% if p.rules_source %} Meanwhile, read the <a href="{{ p.rules_source }}" rel="noopener noreferrer">policy on {{ p.pn }}</a>.{% endif %}</p>
+{% endif %}
+</div>
+
+{% if p.hunter %}
+<h2>Hunter stats</h2>
+<ul class="plain">
+  {% if p.hunter.resolved_reports is defined %}<li>Resolved reports: {{ p.hunter.resolved_reports }}</li>{% endif %}
+  {% if p.hunter.response_efficiency_pct is defined %}<li>Response efficiency: {{ p.hunter.response_efficiency_pct }}%</li>{% endif %}
+  {% if p.hunter.reputation_required %}<li>Reputation required: {{ p.hunter.reputation_required }}</li>{% endif %}
+  {% if p.hunter.submission_fee %}<li>Submission fee: {{ p.hunter.submission_fee }}</li>{% endif %}
+</ul>
+{% endif %}
+
+<h2 id="scope">Scope ({{ p.assets | length }} assets)</h2>
+<div id="scope-filter-slot"></div>
+<div class="table-wrap">
+<table id="scope-table">
+  <thead><tr>
+    <th scope="col">Identifier</th><th scope="col">Category</th><th scope="col">Tier</th>
+    <th scope="col">Bounty</th><th scope="col">Scope</th><th scope="col">Added</th>
+  </tr></thead>
+  <tbody>
+  {% for a in p.assets %}
+  <tr data-q="{{ a.i | lower }}" data-in="{{ 1 if a['in'] else 0 }}" data-paid="{{ 1 if a.paid else 0 }}">
+    <td class="mono">{{ a.i }}</td>
+    <td>{{ a.c }}</td>
+    <td>{{ a.tier or '—' }}</td>
+    <td>{{ 'eligible' if a.paid else 'no' }}</td>
+    <td>{{ 'in scope' if a['in'] else 'out of scope' }}</td>
+    <td>{{ m.date(a.at) }}</td>
+  </tr>
+  {% else %}
+  <tr><td colspan="6">No assets listed.</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2 id="changes">Recent changes</h2>
+{% if p.changes %}
+<ul class="feed plain">
+{% for e in p.changes %}
+  <li><span class="badge k-{{ e.kind | lower | replace('-', 'm') }}">{{ e.kind }}</span> {{ e.title }}
+    <div class="muted small">{{ m.date(e.ts) }} · {{ e.summary }}</div></li>
+{% endfor %}
+</ul>
+{% else %}<p class="muted">No recent changes.</p>{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+# Weekly full eval run; commits the report to main, which also keeps the build schedule alive (GitHub disables
+# schedules after 60 days without repo activity).
+name: evals-full
+on:
+  schedule:
+    - cron: "41 3 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  evals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "24", cache: npm }
+      - run: npm ci --ignore-scripts && npm rebuild esbuild workerd
+      - run: uv sync --frozen
+      - run: uv run python -m quarry_evals.run_all --weekly
+      - name: commit report
+        run: |
+          git config user.name "quarry-evals[bot]"
+          git config user.email "quarry-evals@users.noreply.github.com"
+          git add evals/results
+          git diff --cached --quiet || (git commit -m "evals: weekly report $(date -u +%F)" && git push)

@@ -1,0 +1,1006 @@
+[
+ {
+  "program_id": "h1:solidus",
+  "hash": "1aac68055bcec8fb",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "dos",
+    "spamming",
+    "social engineering",
+    "physical attacks"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "No active bounty program.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:priceline",
+  "hash": "ed3ba7255e01a9da",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-bug-bounty",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "dos",
+    "rate limiting",
+    "self-xss",
+    "clickjacking",
+    "missing security headers",
+    "version disclosure",
+    "weak password policy",
+    "email enumeration",
+    "mixed content",
+    "missing cookie flags",
+    "content spoofing",
+    "session token in url",
+    "vulnerable libraries",
+    "social engineering",
+    "xss protection header"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Do not send reports exported from automated scanners."
+  },
+  "confidence": "low",
+  "notes": "Main policy only bans scanner-exported reports; scanner/automated-tool bans appear in api.rezserver.com and admin.rezserver.com scope notes.",
+  "second_pass_changed": [
+   "scanning"
+  ]
+ },
+ {
+  "program_id": "h1:whoop_bug_bounty",
+  "hash": "403591225e9ea8ba",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf on logout/login",
+    "self-xss",
+    "xss without impact",
+    "subdomain takeover without impact",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "public keys"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Do not randomly fuzz into our APIs, your testing should be methodical and reproducible"
+  },
+  "confidence": "low",
+  "notes": "Only a ban on random fuzzing; scanners not addressed.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:usps",
+  "hash": "343db92869a3dee4",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf on logout",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags",
+    "spf/dkim/dmarc",
+    "outdated browsers",
+    "version disclosure",
+    "tabnabbing",
+    "open redirect"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Test accounts only via scope notes (account creation required); no bounty amounts or no-bounty statement in text.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:hpe_vdp",
+  "hash": "c64b0735f2eababa",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-hackerone-research",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags",
+    "spf/dkim/dmarc",
+    "outdated browsers",
+    "version disclosure",
+    "tabnabbing",
+    "open redirect"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "low",
+  "notes": "Header is recommended ('for best practice'), not strictly required; no bounty info in text.",
+  "second_pass_changed": [
+   "required_header"
+  ]
+ },
+ {
+  "program_id": "h1:doordash",
+  "hash": "4375df7ec5791c06",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-bug-bounty",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "rbac without risk",
+    "leaked credentials",
+    "info disclosure",
+    "open redirect",
+    "missing security headers",
+    "self-xss",
+    "self-dos",
+    "csrf",
+    "clickjacking",
+    "low-impact mobile findings",
+    "rate limiting",
+    "brute force"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "No scanners: Do not run automated security scanners against our systems."
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:luminor",
+  "hash": "34c897037ba6bcdc",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-hackerone-research",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "third-party systems",
+    "password recovery policy",
+    "clickjacking",
+    "vulnerable libraries",
+    "spam",
+    "host header",
+    "tabnabbing",
+    "automated scan reports",
+    "expired credentials",
+    "outdated browsers",
+    "email enumeration",
+    "cookie policies",
+    "jailbroken device",
+    "api keys in mobile apps",
+    "unlikely user interaction"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Reports from automated tools or scans without a working Proof of Concept."
+  },
+  "confidence": "low",
+  "notes": "Header phrased as 'should add'; only large-scale automated attacks and unproven scanner reports addressed.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:godaddy-vdp",
+  "hash": "5e791ffd855b1add",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "dos",
+    "brute force",
+    "user enumeration",
+    "physical attacks",
+    "social engineering",
+    "email flooding",
+    "scanner reports",
+    "password strength",
+    "subdomain takeover",
+    "outdated browsers",
+    "csrf",
+    "directory listing",
+    "spf/dkim/dmarc",
+    "seo",
+    "rate limiting"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Unconfirmed reports from automated vulnerability scanners"
+  },
+  "confidence": "high",
+  "notes": "Limited waiver of site terms is not a legal safe harbour; third-party action explicitly not covered.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:mod_supply_chain_vdp",
+  "hash": "dd36ba978ce47893",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-hackerone-research",
+   "test_accounts": "stated",
+   "excluded_classes": [],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "low",
+  "notes": "Header phrased as 'should add'.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:zurich-insurance",
+  "hash": "06568ec460572a5e",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags",
+    "spf/dkim/dmarc",
+    "outdated browsers",
+    "version disclosure",
+    "tabnabbing",
+    "unlikely user interaction"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "VDP; no bounty statement.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:abb",
+  "hash": "c67fdb32468e6f5d",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "abb products",
+    "automated tool reports",
+    "clickjacking",
+    "missing security headers",
+    "verbose errors",
+    "csrf",
+    "self-xss",
+    "ssl/tls ciphers",
+    "password complexity",
+    "account enumeration",
+    "social engineering",
+    "physical attacks",
+    "dos",
+    "open ports",
+    "tabnabbing"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Reports from automated tools or scans"
+  },
+  "confidence": "low",
+  "notes": "Scanner reports are out of scope but researchers are asked to share tool logs, so scanner use itself is not clearly banned or allowed.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:alibaba_vdp",
+  "hash": "f25b39f1cfeb840f",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "outdated browsers",
+    "account brute force",
+    "csrf",
+    "crlf",
+    "self-xss",
+    "flash-based xss",
+    "tabnabbing",
+    "email spoof",
+    "session fixation",
+    "cache poisoning",
+    "content spoofing",
+    "supply chain attack",
+    "credential leakage",
+    "missing cookie flags",
+    "clickjacking"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Unverified Results of automated tools or scanners"
+  },
+  "confidence": "low",
+  "notes": "Only unverified scanner results excluded; mentions rewards/bounty but no amounts.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:ohiosecretaryofstate",
+  "hash": "3acec087c4317d31",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "functionality bugs",
+    "clickjacking",
+    "email spoofing",
+    "dos",
+    "defacement",
+    "physical testing",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Explicitly no bug bounties.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:lyst",
+  "hash": "4b940274f7bdf9b0",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "160/min",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "help.lyst.com",
+    "dos",
+    "spamming",
+    "social engineering",
+    "physical attacks",
+    "username enumeration",
+    "best practices without impact",
+    "csrf on login/logout",
+    "missing headers",
+    "missing cookie flags",
+    "crossdomain.xml"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "We enforce rate limiting on most of our website. This may result in your address being banned if you make more than around 160 requests per minute from a single IP address. Do not try and evade this limit."
+  },
+  "confidence": "low",
+  "notes": "Rate cap given but tools not explicitly permitted; 'around 160' is approximate.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:singlestore",
+  "hash": "d48acdbc5a9f7728",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-hackerone-research",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags",
+    "missing security headers",
+    "spf/dkim/dmarc",
+    "outdated browsers",
+    "version disclosure",
+    "tabnabbing"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Submitted reports containing verbatim output of automated security scans (e.g. Burp Suite, Nessus) will be disregarded."
+  },
+  "confidence": "low",
+  "notes": "Header phrased as 'please add'; scanners not banned, raw scan output disregarded.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:wellsfargo-bbp",
+  "hash": "888eceae050a7374",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "500/s",
+   "required_header": "x-bug-bounty",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "http header best practices",
+    "spf/dkim/dmarc",
+    "version disclosure",
+    "verbose errors",
+    "self-xss",
+    "web app hygiene",
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "stealer logs"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Thoughtful usage of automated scanners/tools is allowed. Scanners/tools must be configured to not send more than 500 requests per second to any particular service."
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:alshaya",
+  "hash": "ae0e00c5db05cb73",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "clickjacking",
+    "logout/login csrf",
+    "insecure cookie settings",
+    "version disclosure",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls issues",
+    "hsts",
+    "dos",
+    "content spoofing",
+    "subdomain takeover without poc",
+    "spf/dkim/dmarc",
+    "outdated browsers",
+    "missing security headers"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Do not use automated scanners/tools (Such as Tenable/Nessus, Qualys, WebInspect, Acunetix or any other automated tool)"
+  },
+  "confidence": "low",
+  "notes": "Contradictory: bans automated scanners/tools generally but says Burp Suite and custom tools are allowed; labelled as VDP but no explicit no-bounty sentence.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:pfizer",
+  "hash": "fc4c66b660e3e102",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [],
+   "safe_harbour": "yes",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Do not perform automated scanning or testing."
+  },
+  "confidence": "high",
+  "notes": "Safe harbour text coupled with disclaimer of indemnity.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:grindr",
+  "hash": "04d96f59a232511f",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "mitm",
+    "subdomain takeover",
+    "multiple promo accounts",
+    "gps spoofing",
+    "embedded third-party api keys",
+    "spamming",
+    "dos",
+    "clickjacking",
+    "csrf",
+    "missing security headers",
+    "rate limiting",
+    "captcha",
+    "spf/dkim/dmarc",
+    "version disclosure",
+    "outdated browsers",
+    "rooted device",
+    "certificate pinning",
+    "self-xss",
+    "tabnabbing",
+    "open redirect"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:truist_financial",
+  "hash": "303d6d16bfbec7ab",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-bug-bounty",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "physical testing",
+    "social engineering",
+    "phishing",
+    "dos",
+    "resource exhaustion",
+    "wifi testing"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Do not use automated scanning or testing."
+  },
+  "confidence": "high",
+  "notes": "Tool identifier header example X-Bug-Bounty: BurpSuite conflicts mildly with the no-automated-testing rule; good-faith statement is not an explicit no-legal-action promise.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:render",
+  "hash": "9b6e265989fd2334",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "dos",
+    "content spoofing",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags",
+    "outdated browsers",
+    "version disclosure",
+    "tabnabbing",
+    "open redirect",
+    "unlikely user interaction"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:expediagroup",
+  "hash": "0a5bc4cf4d34534d",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "x-hackerone",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "logout/login csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "social engineering",
+    "known public files",
+    "outdated software",
+    "automated tool reports",
+    "spf/dkim/dmarc"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "If you use automated scanners, please set a header with your HackerOne username in your scanner requests to help us distinguish researcher traffic from malicious activity."
+  },
+  "confidence": "low",
+  "notes": "Scanners implicitly permitted if tagged with a header, yet raw scanner reports are out of scope; safe harbour only promises to publicise compliance if a third party sues.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:csg-public",
+  "hash": "5aa33a383b5ae619",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "subdomain takeover",
+    "clickjacking",
+    "verbose errors",
+    "404 pages",
+    "banner disclosure",
+    "public files",
+    "scripting/automation",
+    "autocomplete",
+    "missing cookie flags",
+    "content spoofing",
+    "tabnabbing",
+    "spf/dkim/dmarc",
+    "captcha bypass",
+    "logout csrf",
+    "brute force"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Scripting or other automation and brute forcing of intended functionality"
+  },
+  "confidence": "low",
+  "notes": "Automation of intended functionality is excluded as a vuln class and unvalidated automated-tool reports are out of scope; no explicit scanner permission or ban.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:arc-bbp",
+  "hash": "40228212018b8529",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "source manipulation",
+    "unit tests",
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags",
+    "spf/dkim/dmarc",
+    "outdated browsers"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Identifying User-Agent/header is explicitly recommended, not required.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:oasisprotocol",
+  "hash": "24ad3dda59aaa91d",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags",
+    "spf/dkim/dmarc",
+    "outdated browsers",
+    "version disclosure",
+    "tabnabbing"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:faraday_inc",
+  "hash": "ece57ad0edba2fdf",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "dos",
+    "rate limiting",
+    "csv injection",
+    "permissive cors",
+    "open redirect",
+    "tabnabbing",
+    "missing security headers",
+    "ssl/tls best practices",
+    "spf/dkim/dmarc",
+    "mitm",
+    "version disclosure",
+    "outdated browsers",
+    "self-xss",
+    "intended product behavior",
+    "public tokens"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:latamairlines",
+  "hash": "2712f54336826742",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "user-agent",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "content spoofing",
+    "brute force",
+    "missing csp",
+    "missing cookie flags",
+    "spf/dkim/dmarc",
+    "outdated browsers",
+    "version disclosure",
+    "tabnabbing"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "low",
+  "notes": "User-agent header is 'strongly recommended'; text says no entitlement to reward.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:publitas",
+  "hash": "b31437e93063d8a8",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "xss in catalog viewer",
+    "csrf",
+    "automated scanners",
+    "emails from public dumps",
+    "contact form abuse",
+    "spf/dkim/dmarc",
+    "missing security headers",
+    "brute force",
+    "bulk emails"
+   ],
+   "safe_harbour": "unclear",
+   "bounty_table": "unclear",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Running **automated scanners**"
+  },
+  "confidence": "low",
+  "notes": "Scanners listed under out-of-scope rather than a plain prohibition; reward mentioned without amounts; testing only on integration1 replica.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:ruby",
+  "hash": "02e1fdd64d69894b",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "websites",
+    "third-party applications",
+    "rdoc untrusted code",
+    "bundled gems",
+    "experimental features"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "unclear"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Only bans submitting unverified AI/automated-tool-generated report content; no public-disclosure rules for researchers.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "h1:shein",
+  "hash": "3554f369e981c7f9",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "reflected xss",
+    "dom xss",
+    "subdomain takeover without poc",
+    "third-party hosted services",
+    "clickjacking",
+    "csrf",
+    "mitm",
+    "vulnerable libraries",
+    "csv injection",
+    "ssl/tls best practices",
+    "dos",
+    "html injection",
+    "rate limiting",
+    "missing csp",
+    "missing cookie flags"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ }
+]

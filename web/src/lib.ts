@@ -77,7 +77,11 @@ export async function getJson<T>(url: string, ms = 10000): Promise<T> {
 }
 
 export async function postJson<T>(url: string, body: unknown, ms = 15000, method = "POST"): Promise<T> {
-  const r = await fetchT(url, { method, headers: { "content-type": "application/json" }, body: JSON.stringify(body) }, ms);
+  const r = await fetchT(
+    url,
+    { method, headers: { "content-type": "application/json" }, body: JSON.stringify(body) },
+    ms,
+  );
   if (!r.ok) throw new Error(`${r.status}`);
   return (await r.json()) as T;
 }

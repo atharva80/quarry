@@ -18,7 +18,7 @@ The client (`web/`, Preact islands) and the Worker (`worker/`) only read these s
       "p": "h1",                   // platform key
       "pn": "HackerOne",           // platform name
       "n": "1Password",            // program name
-      "u": "https://hackerone.com/1password", // program URL on the platform
+      // (the platform URL "u" is only in the per-program JSON, to keep the catalog small)
       "s": "open",                 // open|paused|closed|ended|upcoming|judging|suspended|unknown
       "b": 1,                      // pays bounties (0 = VDP)
       "c": 0,                      // contest/audit competition
@@ -33,7 +33,7 @@ The client (`web/`, Preact islands) and the Worker (`worker/`) only read these s
       "n7": 1, "n14": 1, "n30": 3, // in-scope assets added in last 7/14/30 days
       "w30": 1,                    // wildcard assets added in last 30 days
       "la": 1790000000,            // newest in-scope asset added at (0 unknown)
-      "sc": ["*.1password.com", "api.1password.com"], // up to 8 in-scope identifiers (search + preview)
+      "sc": ["*.1password.com", "api.1password.com"], // up to 4 in-scope identifiers, ≤ 60 chars each (search + preview)
       "rules": { "scan": "no", "rl": "5 req/s", "hdr": true } | null, // rules-card summary, null = not extracted
       "age": 1234                  // days since listed (competition proxy input)
     }

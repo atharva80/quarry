@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block content %}
+<h1>Changes</h1>
+<p class="lead">Scope, state and bounty changes from the last 30 days, newest first. Also available as an <a href="/feeds/all.xml">Atom feed</a>.</p>
+<div data-island="changes"></div>
+<div id="changes-static">
+{% if entries %}
+<ul class="feed plain">
+{% for e in entries %}
+  <li>
+    <span class="badge k-{{ e.kind | lower | replace('-', 'm') }}">{{ e.kind }}</span>
+    {% if e.path is defined and e.path %}<a href="{{ e.path }}">{{ e.title }}</a>{% else %}<strong>{{ e.title }}</strong>{% endif %}
+    <div class="muted small">{{ m.date(e.ts) }} · {{ e.summary }}</div>
+  </li>
+{% endfor %}
+</ul>
+{% else %}<p>No changes in the last 30 days.</p>{% endif %}
+</div>
+{% endblock %}

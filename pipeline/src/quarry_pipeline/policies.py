@@ -21,7 +21,7 @@ from markdownify import markdownify
 
 UA = "quarry-bot (+https://github.com/atharva80/quarry)"
 POLICY_PLATFORMS = ("h1", "bugcrowd", "intigriti", "ywh", "immunefi")
-MAX_TEXT = 60_000  # characters kept per policy
+MAX_TEXT = 45_000  # characters kept per policy (D1: 100 KB per statement)
 
 
 class HostLimiter:

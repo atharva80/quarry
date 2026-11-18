@@ -1,0 +1,26 @@
+{
+ "generated": "2026-11-19T01:17:00Z",
+ "entries": [
+  {
+   "id": "e1",
+   "ts": 1789996400,
+   "kind": "SCOPE",
+   "prio": 4,
+   "pid": "h1:prog0",
+   "path": "/p/h1/prog0/",
+   "title": "Program 0",
+   "body": "",
+   "summary": "2 assets added"
+  },
+  {
+   "id": "e2",
+   "ts": 1789910000,
+   "kind": "GONE",
+   "prio": 2,
+   "pid": null,
+   "title": "Old program",
+   "body": "",
+   "summary": "removed"
+  }
+ ]
+}

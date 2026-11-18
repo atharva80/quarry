@@ -1,0 +1,1069 @@
+[
+ {
+  "program_id": "intigriti:0bcc2455-bd63-490b-b725-890a93a1c678",
+  "hash": "766c75e059269653",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Only an unexplained \"Automated tooling setting (platform code): 5\"; no scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:baca9d50-2fd8-427f-bd56-e67f7f058573",
+  "hash": "7b3b5e28426b619d",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners (be creative and do it yourself!). We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "Bounty table all zero; no credentials provided.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:3219ed72-e563-458d-aafd-9ce8ca4e3087",
+  "hash": "6a85129131fe200b",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "cors wildcard",
+    "cpdos",
+    "missing input validation",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners -be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "Also requires UA bugbounty-vrtnv; custom header chosen per guide.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:5e9d5fc7-2cfe-4530-94de-c55f1d8d3a8e",
+  "hash": "8e516f8bf54586ce",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "low",
+  "notes": "Policy has a Safe Harbour paragraph promising no lawsuit but the platform line says \"Safe harbour: no\"; labelled yes from the text.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:53a05c4a-0fc0-45a0-b158-a7562b313f79",
+  "hash": "aea6b8560f8fdcd8",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "45/min",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "ai-generated reports",
+    "weak password policy",
+    "mfa",
+    "session token disclosure",
+    "dependency without exploit",
+    "root access attacks",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Keep automated requests/scanning under **45 requests per minute**"
+  },
+  "confidence": "high",
+  "notes": "Prose about AI-assisted research is advice to researchers, not an instruction to this labeller.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:67d5a491-4baa-4565-bdc9-962bcd5f5ddd",
+  "hash": "09dddc583a2f1174",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "paywall bypass",
+    "open redirect in consent endpoints",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners. Be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:4d41a636-c811-4757-8fd9-007d7f18e212",
+  "hash": "c75fae2aeda2350a",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "customer resources",
+    "quota bypass",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "When using client-side automated testing tools, care must be taken to exclude any actions that creates a support ticket"
+  },
+  "confidence": "low",
+  "notes": "Tools allowed with a restriction (exclude ticket endpoint); no numeric cap.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:4acc7e11-3634-4ce5-b100-d961d3f6c6f0",
+  "hash": "8c90389cb11d64dc",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Bounty table all zero (but small bonuses mentioned); no scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:9a3f850e-4387-4434-98c7-dba2827b727b",
+  "hash": "f450009f0b11bfbb",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "csv injection",
+    "homograph attacks",
+    "xml-rpc",
+    "verbose errors",
+    "social engineering",
+    "dos",
+    "spf/dmarc",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "reverse tabnabbing",
+    "password policy",
+    "version disclosure"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Bounty table all zero; reports in scope are moved to a separate private program.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:f64faa66-b7e6-4ad7-bf56-b64a885d682a",
+  "hash": "555f4f6a64df7235",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "html injection",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Max 5 webforms per day is a form-submission cap, not a request rate; no scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:ecf9c610-36eb-47df-8b25-bb496aff8015",
+  "hash": "4081b01034073857",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "unclear"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "No disclosure wording; low severity bounty 0.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:b31aef04-c63f-429f-b965-f92c94e5eec3",
+  "hash": "160d0c4e79b58d79",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "VDP, no monetary rewards; no scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:ee2612e7-e188-492f-9bb2-ba48651523de",
+  "hash": "5c4e4ac80cebbc2c",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-intigriti",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "infostealer leaks",
+    "known issues",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners -be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:8a9c91c0-dd4f-4ed3-bb65-3c6b68e76b24",
+  "hash": "7171a7190d248dc1",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "otp rate limit",
+    "brute force on login/vouchers",
+    "csrf non-sensitive",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "No scanner wording; only platform code 5.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:7c46a970-eb8d-48b9-aa11-b52198f763c4",
+  "hash": "d848c7f5498cfc9f",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "third-party products",
+    "pre-release products",
+    "end of life products",
+    "it infrastructure",
+    "credentials leaks",
+    "open chassis physical attacks",
+    "physical access attacks",
+    "duplicates",
+    "divestitures",
+    "open-source software",
+    "recent acquisitions",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "VDP-like: bounty table all zero; no scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:201f8ade-4d93-4d8b-b371-af5ed9d8b837",
+  "hash": "fa3f369cff13a36e",
+  "labels": {
+   "scanning": "limited",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-user",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "open redirect without impact",
+    "dns zone transfer",
+    "public data repositories",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "we ask you to adjust your scanners to stay below the limit of req/sec mentioned at the bottom of this page"
+  },
+  "confidence": "low",
+  "notes": "Scanners allowed under a req/sec limit but no number is given anywhere in the text.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:196fa177-ac2d-41b0-91bb-07bc9db43b7a",
+  "hash": "d02e3c4c6a7ac375",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners -be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "AI paragraph is guidance to researchers.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:8a5bf4a3-3183-4e2a-aa5e-20f71efe7f4b",
+  "hash": "12cc626d15008f08",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners -be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:611efbaa-333e-4b7c-a3c0-89665abd3fe3",
+  "hash": "f405764b9400105d",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "third-party products",
+    "licensed products",
+    "pre-release products",
+    "end of life products",
+    "open-source software",
+    "web infrastructure",
+    "credentials leaks",
+    "duplicates",
+    "physical access attacks",
+    "dll hijacking"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "low",
+  "notes": "Safe Harbor section promises no lawsuit but platform line says \"Safe harbour: no\"; labelled yes from text.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:523f9195-ff18-4855-8b31-406b2c87e609",
+  "hash": "d0f4c3f61ad7a206",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-test",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Also requires UA Mozilla/5.0 {Username}; only credential note says none needed (public site).",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:9889b03a-9d1e-44fd-b635-af6e8bd72950",
+  "hash": "da2f27819aca6935",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "10/s",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "email spoofing",
+    "verbose errors",
+    "login/logout csrf",
+    "physical intrusion",
+    "automated scanner reports",
+    "defacement",
+    "third-party services",
+    "missing security headers",
+    "self-xss",
+    "clickjacking without impact",
+    "dos",
+    "brute force",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Do not automatically scan our systems. Limit all requests to a maximum of 10 requests per second."
+  },
+  "confidence": "low",
+  "notes": "Bans automatic scanning yet also sets 10 req/s cap (FAQ says \"X requests per second\").",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:7d2af06f-9f70-4561-9ba6-4c044274a94a",
+  "hash": "b7bd4aae5f2f245a",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "third-party subdomains",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "This normally means automated scanners should not be used."
+  },
+  "confidence": "low",
+  "notes": "Scanner remark applies only to third-party-hosted subdomains; nothing on TrueLayer-owned assets.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:981f8ca2-8ddd-48e8-b710-b6a00fba35cc",
+  "hash": "f2cc955aa47323fb",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "paywall bypass",
+    "open redirect in consent endpoints",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners. Be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:a80f638a-58a5-4f1c-a427-9d944cabd51a",
+  "hash": "eabe2ce1f94fc931",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "scanner-generated reports",
+    "logout csrf",
+    "content spoofing",
+    "captcha bypass",
+    "tls issues",
+    "request flooding",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Only excludes scanner-generated reports without concrete references; no ban or permission.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:b1be2cd1-cb7c-4456-86f4-8e541955a51a",
+  "hash": "35d464221ec0c7ff",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "otp rate limit",
+    "brute force on login/vouchers",
+    "csrf non-sensitive",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "No scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:b1d83f6f-c8a6-4082-8a86-59aa27850d06",
+  "hash": "c4c1d13127c3dfdb",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "user-agent",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Bounty table all zero; no scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:6f38540e-cba1-4897-a20e-0349a6734604",
+  "hash": "062fe6839a6bb71a",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering",
+    "reverse tabnabbing",
+    "password policy"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "high",
+  "notes": "Bounty table all zero; no scanner wording.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:afaeab02-261f-486e-8a43-4dee76fccabb",
+  "hash": "c8e44d4b774a4df2",
+  "labels": {
+   "scanning": "unclear",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "captcha bypass",
+    "subdomain takeover",
+    "cache poisoning dos",
+    "graphql alias overloading",
+    "third-party infrastructure",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": ""
+  },
+  "confidence": "low",
+  "notes": "Safe Harbor section promises no legal action but platform line says \"Safe harbour: no\"; labelled yes from text.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:5f29e1eb-85e8-4d99-9b52-b809f06de633",
+  "hash": "6150cda6113b7b51",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "none",
+   "test_accounts": "none",
+   "excluded_classes": [
+    "enumeration over 1000",
+    "cpdos",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force",
+    "social engineering"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "vdp",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "It’s forbidden to use automatic scanners - be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "low",
+  "notes": "Prose says currently no reward (bonus only) but a non-zero bounty table is listed.",
+  "second_pass_changed": []
+ },
+ {
+  "program_id": "intigriti:806f54d7-a85d-40bd-82cc-f09c1a500f28",
+  "hash": "cf0ce68be9bcdf5a",
+  "labels": {
+   "scanning": "no",
+   "rate_limit": "none",
+   "required_header": "x-intigriti-username",
+   "test_accounts": "stated",
+   "excluded_classes": [
+    "paywall bypass",
+    "open redirect in consent endpoints",
+    "parked domain link hijacking",
+    "self-xss",
+    "missing security headers",
+    "missing cookie flags",
+    "csrf with low impact",
+    "clickjacking without impact",
+    "rate limiting",
+    "spf/dmarc",
+    "username enumeration",
+    "email bombing",
+    "version disclosure",
+    "dos",
+    "brute force"
+   ],
+   "safe_harbour": "yes",
+   "bounty_table": "stated",
+   "disclosure": "stated"
+  },
+  "evidence": {
+   "scanning": "Please do *not* use automatic scanners. Be creative and do it yourself! We cannot accept any submissions found by using automatic scanners."
+  },
+  "confidence": "high",
+  "notes": "",
+  "second_pass_changed": []
+ }
+]

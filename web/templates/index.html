@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "_macros.html" as m %}
+{% block content %}
+<h1>Bug-bounty programs, matched to you</h1>
+<p class="lead">Quarry tracks scope changes across {{ stats.platforms }} platforms and ranks open programs by what you actually hunt.</p>
+
+<div class="stats" aria-label="Catalog statistics">
+  <div class="stat"><b>{{ stats.programs }}</b><span>programs tracked</span></div>
+  <div class="stat"><b>{{ stats.open }}</b><span>open</span></div>
+  <div class="stat"><b>{{ stats.assets }}</b><span>assets</span></div>
+  <div class="stat"><b>{{ stats.platforms }}</b><span>platforms</span></div>
+  <div class="stat"><b>{{ stats.changes_7d }}</b><span>changes in 7 days</span></div>
+</div>
+
+<div data-island="search"></div>
+<div data-island="foryou"></div>
+
+<h2>Newest scope</h2>
+<p class="muted">Programs that most recently added in-scope assets. <a href="/browse/">Browse all</a> or see <a href="/changes/">every change</a>.</p>
+<div class="grid">
+{% for row in fresh %}{{ m.card(row) }}{% endfor %}
+</div>
+{% endblock %}

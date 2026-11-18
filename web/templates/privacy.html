@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Privacy</h1>
+<p class="lead">Quarry has no accounts. Most of what you do stays in your browser.</p>
+
+<h2>Stored in your browser</h2>
+<ul>
+  <li>Your profile (skills, filters, saved and dismissed programs) and a random anonymous id, in local storage.</li>
+  <li>Scope exports and the "For you" ranking are computed on your device. Nothing is uploaded for them.</li>
+</ul>
+
+<h2>Sent to the server only when you use these</h2>
+<ul>
+  <li><strong>Chat, "Ask about this program", smart search:</strong> your question and, for search, your profile, plus the anonymous id.</li>
+  <li><strong>Scope check:</strong> the hosts you paste, to compare against a program's scope. They are not stored.</li>
+  <li><strong>Save / dismiss:</strong> the program and reason, to tune your ranking.</li>
+  <li><strong>Alerts:</strong> your Telegram chat id, Discord webhook URL or push subscription, whichever you set up.</li>
+</ul>
+<p>A bot check (Cloudflare Turnstile) may run before chat to limit abuse. Aggregate, cookie-free visit counts may be collected with Cloudflare Web Analytics.</p>
+
+<h2>Delete your data</h2>
+<p>Use "Delete my data" on the <a href="/alerts/">Alerts page</a>. It wipes everything held under your anonymous id on the server, removes subscriptions, and clears this browser's saved profile. You can also clear this site's storage in your browser settings.</p>
+{% endblock %}

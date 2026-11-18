@@ -1,0 +1,45 @@
+{#- ISO date (YYYY-MM-DD) from a unix timestamp, in pure Jinja so no custom filter is needed. 0/empty -> em dash. -#}
+{% macro date(ts) -%}
+{%- if not ts -%}—{%- else -%}
+{%- set z = ts // 86400 + 719468 -%}
+{%- set era = z // 146097 -%}
+{%- set doe = z - era * 146097 -%}
+{%- set yoe = (doe - doe // 1460 + doe // 36524 - doe // 146096) // 365 -%}
+{%- set doy = doe - (365 * yoe + yoe // 4 - yoe // 100) -%}
+{%- set mp = (5 * doy + 2) // 153 -%}
+{%- set d = doy - (153 * mp + 2) // 5 + 1 -%}
+{%- set m = mp + 3 if mp < 10 else mp - 9 -%}
+{%- set y = yoe + era * 400 + (1 if m <= 2 else 0) -%}
+{{ '%04d-%02d-%02d' % (y, m, d) }}
+{%- endif -%}
+{%- endmacro %}
+
+{% macro badge(text, kind='') -%}<span class="badge {{ kind }}">{{ text }}</span>{%- endmacro %}
+
+{% macro state_badge(s) -%}
+{{ badge(s, 'ok' if s == 'open' else ('warn' if s in ['paused', 'upcoming', 'judging'] else 'bad')) }}
+{%- endmacro %}
+
+{% macro card(row) %}
+<article class="card">
+  <h3><a href="{{ row.path }}">{{ row.n }}</a></h3>
+  <p class="meta">{{ row.pn }} · {% if row.b %}max {{ row.mx or 'n/a' }}{% else %}VDP{% endif %} · {{ row.na }} in scope</p>
+  {% if row.cat %}<ul class="chips">{% for c in row.cat %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
+  {% if row.n7 %}<p class="small"><strong>{{ row.n7 }} new asset{{ '' if row.n7 == 1 else 's' }} this week</strong>{% if row.w30 %} ({{ row.w30 }} wildcard in 30 days){% endif %}</p>
+  {% elif row.n30 %}<p class="small">{{ row.n30 }} new asset{{ '' if row.n30 == 1 else 's' }} in the last 30 days</p>{% endif %}
+</article>
+{% endmacro %}
+
+{#- Generic key/value rendering for the status page. -#}
+{% macro kv(d) %}
+<div class="table-wrap"><table class="kv"><tbody>
+{% for k, v in d.items() %}
+<tr><th scope="row">{{ k }}</th><td>
+{%- if v is mapping %}{{ kv(v) }}
+{%- elif v is string or v is number %}{{ v }}
+{%- elif v is iterable %}{{ v | join(', ') }}
+{%- else %}{{ v if v is not none else '—' }}{% endif -%}
+</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% endmacro %}

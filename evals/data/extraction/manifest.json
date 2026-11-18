@@ -1,0 +1,1207 @@
+{
+ "seed": 20261119,
+ "per_platform": 30,
+ "dev_per_platform": 10,
+ "items": [
+  {
+   "program_id": "bugcrowd:unisys-mbb-og",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "1f7ee0a6ef915e65",
+   "chars": 5450,
+   "source_url": "https://bugcrowd.com/engagements/unisys-mbb-og"
+  },
+  {
+   "program_id": "bugcrowd:eazybi",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "ee1e476abe6f67c4",
+   "chars": 11205,
+   "source_url": "https://bugcrowd.com/engagements/eazybi"
+  },
+  {
+   "program_id": "bugcrowd:canva",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "893a88cf2c9083c1",
+   "chars": 28952,
+   "source_url": "https://bugcrowd.com/engagements/canva"
+  },
+  {
+   "program_id": "bugcrowd:keepersecurity",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "a5151c7f6899b10b",
+   "chars": 14913,
+   "source_url": "https://bugcrowd.com/engagements/keepersecurity"
+  },
+  {
+   "program_id": "bugcrowd:gliffy",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "a2d2a6d57a753f10",
+   "chars": 10645,
+   "source_url": "https://bugcrowd.com/engagements/gliffy"
+  },
+  {
+   "program_id": "bugcrowd:codeclou",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "0144fb08f2d0d21d",
+   "chars": 13906,
+   "source_url": "https://bugcrowd.com/engagements/codeclou"
+  },
+  {
+   "program_id": "bugcrowd:consensus-mbb-og",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "bc2aa05e98434e4d",
+   "chars": 7260,
+   "source_url": "https://bugcrowd.com/engagements/consensus-mbb-og"
+  },
+  {
+   "program_id": "bugcrowd:cappsule-sarl",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "efd7f2362134451d",
+   "chars": 11042,
+   "source_url": "https://bugcrowd.com/engagements/cappsule-sarl"
+  },
+  {
+   "program_id": "bugcrowd:entain-glf-mbb-og",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "40e88701b3eed921",
+   "chars": 7431,
+   "source_url": "https://bugcrowd.com/engagements/entain-glf-mbb-og"
+  },
+  {
+   "program_id": "bugcrowd:originenergy-og1",
+   "platform": "bugcrowd",
+   "split": "dev",
+   "hash": "06320f288b55168d",
+   "chars": 7247,
+   "source_url": "https://bugcrowd.com/engagements/originenergy-og1"
+  },
+  {
+   "program_id": "bugcrowd:pexels",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "44580fe93ec474f7",
+   "chars": 5552,
+   "source_url": "https://bugcrowd.com/engagements/pexels"
+  },
+  {
+   "program_id": "bugcrowd:codeorg",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "28c11a5e86455dcb",
+   "chars": 8589,
+   "source_url": "https://bugcrowd.com/engagements/codeorg"
+  },
+  {
+   "program_id": "bugcrowd:seek",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "30c793be36aa127e",
+   "chars": 9744,
+   "source_url": "https://bugcrowd.com/engagements/seek"
+  },
+  {
+   "program_id": "bugcrowd:octopus-og",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "b4d2ed1d3e82389a",
+   "chars": 11598,
+   "source_url": "https://bugcrowd.com/engagements/octopus-og"
+  },
+  {
+   "program_id": "bugcrowd:tamedia",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "58a27d313ba80ac0",
+   "chars": 5385,
+   "source_url": "https://bugcrowd.com/engagements/tamedia"
+  },
+  {
+   "program_id": "bugcrowd:smartchain-mbb-og",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "d32e9ae4ed14e856",
+   "chars": 10076,
+   "source_url": "https://bugcrowd.com/engagements/smartchain-mbb-og"
+  },
+  {
+   "program_id": "bugcrowd:moneytreekkog",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "27297631e25f348f",
+   "chars": 4756,
+   "source_url": "https://bugcrowd.com/engagements/moneytreekkog"
+  },
+  {
+   "program_id": "bugcrowd:tidal-bugbounty",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "c84f00c14e15ccde",
+   "chars": 9617,
+   "source_url": "https://bugcrowd.com/engagements/tidal-bugbounty"
+  },
+  {
+   "program_id": "bugcrowd:neohrms",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "e53c68ef1bee7b47",
+   "chars": 3760,
+   "source_url": "https://bugcrowd.com/engagements/neohrms"
+  },
+  {
+   "program_id": "bugcrowd:etsy",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "c5bbcd7113f91fff",
+   "chars": 9776,
+   "source_url": "https://bugcrowd.com/engagements/etsy"
+  },
+  {
+   "program_id": "bugcrowd:pnimedia-bb",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "bb373d02cc745d14",
+   "chars": 7223,
+   "source_url": "https://bugcrowd.com/engagements/pnimedia-bb"
+  },
+  {
+   "program_id": "bugcrowd:cfr",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "d03a50474c65e74d",
+   "chars": 2686,
+   "source_url": "https://bugcrowd.com/engagements/cfr"
+  },
+  {
+   "program_id": "bugcrowd:sophos",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "fd6ed232189b79e6",
+   "chars": 15410,
+   "source_url": "https://bugcrowd.com/engagements/sophos"
+  },
+  {
+   "program_id": "bugcrowd:balsamiq",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "6cca49537632b8d4",
+   "chars": 11291,
+   "source_url": "https://bugcrowd.com/engagements/balsamiq"
+  },
+  {
+   "program_id": "bugcrowd:atlassian",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "dbe07ce3c78e49b7",
+   "chars": 28941,
+   "source_url": "https://bugcrowd.com/engagements/atlassian"
+  },
+  {
+   "program_id": "bugcrowd:bullish-exchange",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "cfa2012f565de9ea",
+   "chars": 9266,
+   "source_url": "https://bugcrowd.com/engagements/bullish-exchange"
+  },
+  {
+   "program_id": "bugcrowd:cvent-bb-og",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "78a8d917c3317273",
+   "chars": 11059,
+   "source_url": "https://bugcrowd.com/engagements/cvent-bb-og"
+  },
+  {
+   "program_id": "bugcrowd:pixabay",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "1f32cdb6dbe54556",
+   "chars": 5251,
+   "source_url": "https://bugcrowd.com/engagements/pixabay"
+  },
+  {
+   "program_id": "bugcrowd:motorolamobility-iot",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "474cc50e61b90cf0",
+   "chars": 9379,
+   "source_url": "https://bugcrowd.com/engagements/motorolamobility-iot"
+  },
+  {
+   "program_id": "bugcrowd:prosus-og",
+   "platform": "bugcrowd",
+   "split": "test",
+   "hash": "9dce3fd9077d510e",
+   "chars": 3240,
+   "source_url": "https://bugcrowd.com/engagements/prosus-og"
+  },
+  {
+   "program_id": "h1:solidus",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "1aac68055bcec8fb",
+   "chars": 1737,
+   "source_url": "https://hackerone.com/solidus/policy"
+  },
+  {
+   "program_id": "h1:priceline",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "ed3ba7255e01a9da",
+   "chars": 12608,
+   "source_url": "https://hackerone.com/priceline/policy"
+  },
+  {
+   "program_id": "h1:whoop_bug_bounty",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "403591225e9ea8ba",
+   "chars": 6585,
+   "source_url": "https://hackerone.com/whoop_bug_bounty/policy"
+  },
+  {
+   "program_id": "h1:usps",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "343db92869a3dee4",
+   "chars": 18472,
+   "source_url": "https://hackerone.com/usps/policy"
+  },
+  {
+   "program_id": "h1:hpe_vdp",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "c64b0735f2eababa",
+   "chars": 6417,
+   "source_url": "https://hackerone.com/hpe_vdp/policy"
+  },
+  {
+   "program_id": "h1:doordash",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "4375df7ec5791c06",
+   "chars": 11769,
+   "source_url": "https://hackerone.com/doordash/policy"
+  },
+  {
+   "program_id": "h1:luminor",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "34c897037ba6bcdc",
+   "chars": 5769,
+   "source_url": "https://hackerone.com/luminor/policy"
+  },
+  {
+   "program_id": "h1:godaddy-vdp",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "5e791ffd855b1add",
+   "chars": 9710,
+   "source_url": "https://hackerone.com/godaddy-vdp/policy"
+  },
+  {
+   "program_id": "h1:mod_supply_chain_vdp",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "dd36ba978ce47893",
+   "chars": 1594,
+   "source_url": "https://hackerone.com/mod_supply_chain_vdp/policy"
+  },
+  {
+   "program_id": "h1:zurich-insurance",
+   "platform": "h1",
+   "split": "dev",
+   "hash": "06568ec460572a5e",
+   "chars": 4741,
+   "source_url": "https://hackerone.com/zurich-insurance/policy"
+  },
+  {
+   "program_id": "h1:abb",
+   "platform": "h1",
+   "split": "test",
+   "hash": "c67fdb32468e6f5d",
+   "chars": 16149,
+   "source_url": "https://hackerone.com/abb/policy"
+  },
+  {
+   "program_id": "h1:alibaba_vdp",
+   "platform": "h1",
+   "split": "test",
+   "hash": "f25b39f1cfeb840f",
+   "chars": 5741,
+   "source_url": "https://hackerone.com/alibaba_vdp/policy"
+  },
+  {
+   "program_id": "h1:ohiosecretaryofstate",
+   "platform": "h1",
+   "split": "test",
+   "hash": "3acec087c4317d31",
+   "chars": 9725,
+   "source_url": "https://hackerone.com/ohiosecretaryofstate/policy"
+  },
+  {
+   "program_id": "h1:lyst",
+   "platform": "h1",
+   "split": "test",
+   "hash": "4b940274f7bdf9b0",
+   "chars": 3165,
+   "source_url": "https://hackerone.com/lyst/policy"
+  },
+  {
+   "program_id": "h1:singlestore",
+   "platform": "h1",
+   "split": "test",
+   "hash": "d48acdbc5a9f7728",
+   "chars": 14533,
+   "source_url": "https://hackerone.com/singlestore/policy"
+  },
+  {
+   "program_id": "h1:wellsfargo-bbp",
+   "platform": "h1",
+   "split": "test",
+   "hash": "888eceae050a7374",
+   "chars": 12975,
+   "source_url": "https://hackerone.com/wellsfargo-bbp/policy"
+  },
+  {
+   "program_id": "h1:alshaya",
+   "platform": "h1",
+   "split": "test",
+   "hash": "ae0e00c5db05cb73",
+   "chars": 8554,
+   "source_url": "https://hackerone.com/alshaya/policy"
+  },
+  {
+   "program_id": "h1:pfizer",
+   "platform": "h1",
+   "split": "test",
+   "hash": "fc4c66b660e3e102",
+   "chars": 3061,
+   "source_url": "https://hackerone.com/pfizer/policy"
+  },
+  {
+   "program_id": "h1:grindr",
+   "platform": "h1",
+   "split": "test",
+   "hash": "04d96f59a232511f",
+   "chars": 20310,
+   "source_url": "https://hackerone.com/grindr/policy"
+  },
+  {
+   "program_id": "h1:truist_financial",
+   "platform": "h1",
+   "split": "test",
+   "hash": "303d6d16bfbec7ab",
+   "chars": 4688,
+   "source_url": "https://hackerone.com/truist_financial/policy"
+  },
+  {
+   "program_id": "h1:render",
+   "platform": "h1",
+   "split": "test",
+   "hash": "9b6e265989fd2334",
+   "chars": 3575,
+   "source_url": "https://hackerone.com/render/policy"
+  },
+  {
+   "program_id": "h1:expediagroup",
+   "platform": "h1",
+   "split": "test",
+   "hash": "0a5bc4cf4d34534d",
+   "chars": 7153,
+   "source_url": "https://hackerone.com/expediagroup/policy"
+  },
+  {
+   "program_id": "h1:csg-public",
+   "platform": "h1",
+   "split": "test",
+   "hash": "5aa33a383b5ae619",
+   "chars": 10537,
+   "source_url": "https://hackerone.com/csg-public/policy"
+  },
+  {
+   "program_id": "h1:arc-bbp",
+   "platform": "h1",
+   "split": "test",
+   "hash": "40228212018b8529",
+   "chars": 8973,
+   "source_url": "https://hackerone.com/arc-bbp/policy"
+  },
+  {
+   "program_id": "h1:oasisprotocol",
+   "platform": "h1",
+   "split": "test",
+   "hash": "24ad3dda59aaa91d",
+   "chars": 4629,
+   "source_url": "https://hackerone.com/oasisprotocol/policy"
+  },
+  {
+   "program_id": "h1:faraday_inc",
+   "platform": "h1",
+   "split": "test",
+   "hash": "ece57ad0edba2fdf",
+   "chars": 11926,
+   "source_url": "https://hackerone.com/faraday_inc/policy"
+  },
+  {
+   "program_id": "h1:latamairlines",
+   "platform": "h1",
+   "split": "test",
+   "hash": "2712f54336826742",
+   "chars": 13989,
+   "source_url": "https://hackerone.com/latamairlines/policy"
+  },
+  {
+   "program_id": "h1:publitas",
+   "platform": "h1",
+   "split": "test",
+   "hash": "b31437e93063d8a8",
+   "chars": 3631,
+   "source_url": "https://hackerone.com/publitas/policy"
+  },
+  {
+   "program_id": "h1:ruby",
+   "platform": "h1",
+   "split": "test",
+   "hash": "02e1fdd64d69894b",
+   "chars": 3773,
+   "source_url": "https://hackerone.com/ruby/policy"
+  },
+  {
+   "program_id": "h1:shein",
+   "platform": "h1",
+   "split": "test",
+   "hash": "3554f369e981c7f9",
+   "chars": 8210,
+   "source_url": "https://hackerone.com/shein/policy"
+  },
+  {
+   "program_id": "immunefi:hydration",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "8ac0456995fa1f8d",
+   "chars": 9305,
+   "source_url": "https://immunefi.com/bug-bounty/hydration/information/"
+  },
+  {
+   "program_id": "immunefi:berachain",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "4cfa75e16d385eca",
+   "chars": 13861,
+   "source_url": "https://immunefi.com/bug-bounty/berachain/information/"
+  },
+  {
+   "program_id": "immunefi:extrafinance",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "52ed1533ea893880",
+   "chars": 9213,
+   "source_url": "https://immunefi.com/bug-bounty/extrafinance/information/"
+  },
+  {
+   "program_id": "immunefi:sparklend",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "27e33ba3ceb38323",
+   "chars": 14314,
+   "source_url": "https://immunefi.com/bug-bounty/sparklend/information/"
+  },
+  {
+   "program_id": "immunefi:pareto",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "7b889ed608d1532f",
+   "chars": 6652,
+   "source_url": "https://immunefi.com/bug-bounty/pareto/information/"
+  },
+  {
+   "program_id": "immunefi:raydium",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "1438ff04892e2a83",
+   "chars": 7922,
+   "source_url": "https://immunefi.com/bug-bounty/raydium/information/"
+  },
+  {
+   "program_id": "immunefi:gammaswap",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "9ba1645fd49b7a42",
+   "chars": 19162,
+   "source_url": "https://immunefi.com/bug-bounty/gammaswap/information/"
+  },
+  {
+   "program_id": "immunefi:arkadiko",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "cd47a9c76b59182c",
+   "chars": 10601,
+   "source_url": "https://immunefi.com/bug-bounty/arkadiko/information/"
+  },
+  {
+   "program_id": "immunefi:ondofinance",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "bf275ca6d66a228a",
+   "chars": 15838,
+   "source_url": "https://immunefi.com/bug-bounty/ondofinance/information/"
+  },
+  {
+   "program_id": "immunefi:1inch-aqua",
+   "platform": "immunefi",
+   "split": "dev",
+   "hash": "8cbb80b1d0cd293f",
+   "chars": 5960,
+   "source_url": "https://immunefi.com/bug-bounty/1inch-aqua/information/"
+  },
+  {
+   "program_id": "immunefi:rootstocklabs",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "034f6ae33cc0adb1",
+   "chars": 13660,
+   "source_url": "https://immunefi.com/bug-bounty/rootstocklabs/information/"
+  },
+  {
+   "program_id": "immunefi:ethena",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "88827d87b921e5a8",
+   "chars": 13285,
+   "source_url": "https://immunefi.com/bug-bounty/ethena/information/"
+  },
+  {
+   "program_id": "immunefi:blockpinetwork",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "5795dfef61c18fa1",
+   "chars": 6680,
+   "source_url": "https://immunefi.com/bug-bounty/blockpinetwork/information/"
+  },
+  {
+   "program_id": "immunefi:instadapp",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "02db199940352774",
+   "chars": 14127,
+   "source_url": "https://immunefi.com/bug-bounty/instadapp/information/"
+  },
+  {
+   "program_id": "immunefi:mtpelerin",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "060e54bfe3da7c7a",
+   "chars": 6673,
+   "source_url": "https://immunefi.com/bug-bounty/mtpelerin/information/"
+  },
+  {
+   "program_id": "immunefi:ipor",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "e9282894a4ab422b",
+   "chars": 10024,
+   "source_url": "https://immunefi.com/bug-bounty/ipor/information/"
+  },
+  {
+   "program_id": "immunefi:Aevo",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "509f0ef948883b74",
+   "chars": 5310,
+   "source_url": "https://immunefi.com/bug-bounty/Aevo/information/"
+  },
+  {
+   "program_id": "immunefi:symbiosis",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "49e7d891faccb73b",
+   "chars": 5685,
+   "source_url": "https://immunefi.com/bug-bounty/symbiosis/information/"
+  },
+  {
+   "program_id": "immunefi:axelarnetwork",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "088ee5893dec6def",
+   "chars": 8388,
+   "source_url": "https://immunefi.com/bug-bounty/axelarnetwork/information/"
+  },
+  {
+   "program_id": "immunefi:fluxfinance",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "15db0d9125b617e9",
+   "chars": 8038,
+   "source_url": "https://immunefi.com/bug-bounty/fluxfinance/information/"
+  },
+  {
+   "program_id": "immunefi:yearnfinance",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "a3a50d00045d6e50",
+   "chars": 10966,
+   "source_url": "https://immunefi.com/bug-bounty/yearnfinance/information/"
+  },
+  {
+   "program_id": "immunefi:charm",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "c847ccbdb258c417",
+   "chars": 4966,
+   "source_url": "https://immunefi.com/bug-bounty/charm/information/"
+  },
+  {
+   "program_id": "immunefi:gmtrade",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "8d66d71193466232",
+   "chars": 6134,
+   "source_url": "https://immunefi.com/bug-bounty/gmtrade/information/"
+  },
+  {
+   "program_id": "immunefi:katana",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "55f06a8288da385e",
+   "chars": 9466,
+   "source_url": "https://immunefi.com/bug-bounty/katana/information/"
+  },
+  {
+   "program_id": "immunefi:folksfinance",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "5f4dd0edde140a10",
+   "chars": 5931,
+   "source_url": "https://immunefi.com/bug-bounty/folksfinance/information/"
+  },
+  {
+   "program_id": "immunefi:staderforeth",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "2e2aa718021c3e50",
+   "chars": 7493,
+   "source_url": "https://immunefi.com/bug-bounty/staderforeth/information/"
+  },
+  {
+   "program_id": "immunefi:1inch-aqua-improvement",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "f099ba25e72eaaef",
+   "chars": 7626,
+   "source_url": "https://immunefi.com/bug-bounty/1inch-aqua-improvement/information/"
+  },
+  {
+   "program_id": "immunefi:ichi",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "d9ea8aec4ce08ae1",
+   "chars": 5661,
+   "source_url": "https://immunefi.com/bug-bounty/ichi/information/"
+  },
+  {
+   "program_id": "immunefi:zksync-os",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "52ec5b130a55298a",
+   "chars": 14514,
+   "source_url": "https://immunefi.com/bug-bounty/zksync-os/information/"
+  },
+  {
+   "program_id": "immunefi:utix",
+   "platform": "immunefi",
+   "split": "test",
+   "hash": "60fb96d773fff2e7",
+   "chars": 6395,
+   "source_url": "https://immunefi.com/bug-bounty/utix/information/"
+  },
+  {
+   "program_id": "intigriti:0bcc2455-bd63-490b-b725-890a93a1c678",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "766c75e059269653",
+   "chars": 4888,
+   "source_url": "https://app.intigriti.com/programs/lansweeper/fing/detail"
+  },
+  {
+   "program_id": "intigriti:baca9d50-2fd8-427f-bd56-e67f7f058573",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "7b3b5e28426b619d",
+   "chars": 5013,
+   "source_url": "https://app.intigriti.com/programs/randstad/bmc/detail"
+  },
+  {
+   "program_id": "intigriti:3219ed72-e563-458d-aafd-9ce8ca4e3087",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "6a85129131fe200b",
+   "chars": 6938,
+   "source_url": "https://app.intigriti.com/programs/vrtnv/vrtnv/detail"
+  },
+  {
+   "program_id": "intigriti:5e9d5fc7-2cfe-4530-94de-c55f1d8d3a8e",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "8e516f8bf54586ce",
+   "chars": 9266,
+   "source_url": "https://app.intigriti.com/programs/ourahealthoy/ouravulnerabilitydisclosureprogram/detail"
+  },
+  {
+   "program_id": "intigriti:53a05c4a-0fc0-45a0-b158-a7562b313f79",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "aea6b8560f8fdcd8",
+   "chars": 28684,
+   "source_url": "https://app.intigriti.com/programs/onepassword/1passwordbugbountyprogram/detail"
+  },
+  {
+   "program_id": "intigriti:67d5a491-4baa-4565-bdc9-962bcd5f5ddd",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "09dddc583a2f1174",
+   "chars": 7887,
+   "source_url": "https://app.intigriti.com/programs/dpgm/humo/detail"
+  },
+  {
+   "program_id": "intigriti:4d41a636-c811-4757-8fd9-007d7f18e212",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "c75fae2aeda2350a",
+   "chars": 10962,
+   "source_url": "https://app.intigriti.com/programs/exoscale/excoscalebugbounty/detail"
+  },
+  {
+   "program_id": "intigriti:4acc7e11-3634-4ce5-b100-d961d3f6c6f0",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "8c90389cb11d64dc",
+   "chars": 6175,
+   "source_url": "https://app.intigriti.com/programs/hrsgroup/hrsgroupvdp/detail"
+  },
+  {
+   "program_id": "intigriti:9a3f850e-4387-4434-98c7-dba2827b727b",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "f450009f0b11bfbb",
+   "chars": 4161,
+   "source_url": "https://app.intigriti.com/programs/revolut/revolutvdp/detail"
+  },
+  {
+   "program_id": "intigriti:f64faa66-b7e6-4ad7-bf56-b64a885d682a",
+   "platform": "intigriti",
+   "split": "dev",
+   "hash": "555f4f6a64df7235",
+   "chars": 5638,
+   "source_url": "https://app.intigriti.com/programs/vlerickbusinessschool/vlerickbusinessschool/detail"
+  },
+  {
+   "program_id": "intigriti:ecf9c610-36eb-47df-8b25-bb496aff8015",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "4081b01034073857",
+   "chars": 4969,
+   "source_url": "https://app.intigriti.com/programs/uz leuven/nexuzhealthwebpacs/detail"
+  },
+  {
+   "program_id": "intigriti:b31aef04-c63f-429f-b965-f92c94e5eec3",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "160d0c4e79b58d79",
+   "chars": 7039,
+   "source_url": "https://app.intigriti.com/programs/dropbox/dropbox-vdp/detail"
+  },
+  {
+   "program_id": "intigriti:ee2612e7-e188-492f-9bb2-ba48651523de",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "5c4e4ac80cebbc2c",
+   "chars": 10355,
+   "source_url": "https://app.intigriti.com/programs/intergamma/intergamma/detail"
+  },
+  {
+   "program_id": "intigriti:8a9c91c0-dd4f-4ed3-bb65-3c6b68e76b24",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "7171a7190d248dc1",
+   "chars": 9852,
+   "source_url": "https://app.intigriti.com/programs/aswatson/watsons/detail"
+  },
+  {
+   "program_id": "intigriti:7c46a970-eb8d-48b9-aa11-b52198f763c4",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "d848c7f5498cfc9f",
+   "chars": 17650,
+   "source_url": "https://app.intigriti.com/programs/intel/intelvulnerabilitydisclosureprogram/detail"
+  },
+  {
+   "program_id": "intigriti:201f8ade-4d93-4d8b-b371-af5ed9d8b837",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "fa3f369cff13a36e",
+   "chars": 7439,
+   "source_url": "https://app.intigriti.com/programs/ripencc/ripencc/detail"
+  },
+  {
+   "program_id": "intigriti:196fa177-ac2d-41b0-91bb-07bc9db43b7a",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "d02e3c4c6a7ac375",
+   "chars": 8766,
+   "source_url": "https://app.intigriti.com/programs/sbb/sbbglobal/detail"
+  },
+  {
+   "program_id": "intigriti:8a5bf4a3-3183-4e2a-aa5e-20f71efe7f4b",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "12cc626d15008f08",
+   "chars": 4600,
+   "source_url": "https://app.intigriti.com/programs/waterlink/water-linkvdp/detail"
+  },
+  {
+   "program_id": "intigriti:611efbaa-333e-4b7c-a3c0-89665abd3fe3",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "f405764b9400105d",
+   "chars": 17361,
+   "source_url": "https://app.intigriti.com/programs/altera/altera/detail"
+  },
+  {
+   "program_id": "intigriti:523f9195-ff18-4855-8b31-406b2c87e609",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "d0f4c3f61ad7a206",
+   "chars": 5254,
+   "source_url": "https://app.intigriti.com/programs/fluvius/fluvius/detail"
+  },
+  {
+   "program_id": "intigriti:9889b03a-9d1e-44fd-b635-af6e8bd72950",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "da2f27819aca6935",
+   "chars": 12347,
+   "source_url": "https://app.intigriti.com/programs/liferay/liferay-vdp/detail"
+  },
+  {
+   "program_id": "intigriti:7d2af06f-9f70-4561-9ba6-4c044274a94a",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "b7bd4aae5f2f245a",
+   "chars": 8013,
+   "source_url": "https://app.intigriti.com/programs/truelayer/truelayervdp/detail"
+  },
+  {
+   "program_id": "intigriti:981f8ca2-8ddd-48e8-b710-b6a00fba35cc",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "f2cc955aa47323fb",
+   "chars": 6461,
+   "source_url": "https://app.intigriti.com/programs/dpgm/vtmgo/detail"
+  },
+  {
+   "program_id": "intigriti:a80f638a-58a5-4f1c-a427-9d944cabd51a",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "eabe2ce1f94fc931",
+   "chars": 6305,
+   "source_url": "https://app.intigriti.com/programs/adac/adacvulnerabilitydisclosureprogram/detail"
+  },
+  {
+   "program_id": "intigriti:b1be2cd1-cb7c-4456-86f4-8e541955a51a",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "35d464221ec0c7ff",
+   "chars": 9411,
+   "source_url": "https://app.intigriti.com/programs/aswatson/theperfumeshop/detail"
+  },
+  {
+   "program_id": "intigriti:b1d83f6f-c8a6-4082-8a86-59aa27850d06",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "c4c1d13127c3dfdb",
+   "chars": 6829,
+   "source_url": "https://app.intigriti.com/programs/toast/toastvdp/detail"
+  },
+  {
+   "program_id": "intigriti:6f38540e-cba1-4897-a20e-0349a6734604",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "062fe6839a6bb71a",
+   "chars": 5619,
+   "source_url": "https://app.intigriti.com/programs/tccc/cokeonenorthamerica/detail"
+  },
+  {
+   "program_id": "intigriti:afaeab02-261f-486e-8a43-4dee76fccabb",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "c8e44d4b774a4df2",
+   "chars": 9394,
+   "source_url": "https://app.intigriti.com/programs/rivian/rivianbugbounty/detail"
+  },
+  {
+   "program_id": "intigriti:5f29e1eb-85e8-4d99-9b52-b809f06de633",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "6150cda6113b7b51",
+   "chars": 4973,
+   "source_url": "https://app.intigriti.com/programs/bpost/dummy/detail"
+  },
+  {
+   "program_id": "intigriti:806f54d7-a85d-40bd-82cc-f09c1a500f28",
+   "platform": "intigriti",
+   "split": "test",
+   "hash": "cf0ce68be9bcdf5a",
+   "chars": 8158,
+   "source_url": "https://app.intigriti.com/programs/dpgm/dpgmedia/detail"
+  },
+  {
+   "program_id": "ywh:swiss-post-evoting",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "a92a6071f0fb58c0",
+   "chars": 28417,
+   "source_url": "https://yeswehack.com/programs/swiss-post-evoting"
+  },
+  {
+   "program_id": "ywh:mediamarktsaturn-bug-bounty-program",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "2d71fddbd6366cd6",
+   "chars": 24879,
+   "source_url": "https://yeswehack.com/programs/mediamarktsaturn-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:programmes-de-primes-aux-bogues-du-gouvernement-du-quebec-cgcd",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "273b55795f62b8b9",
+   "chars": 16286,
+   "source_url": "https://yeswehack.com/programs/programmes-de-primes-aux-bogues-du-gouvernement-du-quebec-cgcd"
+  },
+  {
+   "program_id": "ywh:harman-international-web-applications",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "81848e433c857239",
+   "chars": 9841,
+   "source_url": "https://yeswehack.com/programs/harman-international-web-applications"
+  },
+  {
+   "program_id": "ywh:datadome-bot-bounty",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "e55b5cf533836c67",
+   "chars": 6106,
+   "source_url": "https://yeswehack.com/programs/datadome-bot-bounty"
+  },
+  {
+   "program_id": "ywh:datadome-bug-bounty",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "eb5b4b2645d471d0",
+   "chars": 7018,
+   "source_url": "https://yeswehack.com/programs/datadome-bug-bounty"
+  },
+  {
+   "program_id": "ywh:alasco-gmbh-bug-bounty-program",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "6937d5539a23199f",
+   "chars": 10809,
+   "source_url": "https://yeswehack.com/programs/alasco-gmbh-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:sogexia",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "3679b40e972dc8b8",
+   "chars": 13131,
+   "source_url": "https://yeswehack.com/programs/sogexia"
+  },
+  {
+   "program_id": "ywh:outscale",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "5a59add4268c1b8a",
+   "chars": 7570,
+   "source_url": "https://yeswehack.com/programs/outscale"
+  },
+  {
+   "program_id": "ywh:fdj-united-online-betting-gaming-bug-bounty-program",
+   "platform": "ywh",
+   "split": "dev",
+   "hash": "7cf73ae655fc1960",
+   "chars": 11222,
+   "source_url": "https://yeswehack.com/programs/fdj-united-online-betting-gaming-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:imou-public-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "7255fda9dbca16a6",
+   "chars": 7170,
+   "source_url": "https://yeswehack.com/programs/imou-public-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:vidaxl-services-open-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "db887ad8f2ff475d",
+   "chars": 9789,
+   "source_url": "https://yeswehack.com/programs/vidaxl-services-open-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:infomaniak-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "012365ebee291764",
+   "chars": 29769,
+   "source_url": "https://yeswehack.com/programs/infomaniak-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:paddle-com-public-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "9a334e1558ed15b2",
+   "chars": 15094,
+   "source_url": "https://yeswehack.com/programs/paddle-com-public-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:vincisa-public-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "2b5ea0f1c8ec5f08",
+   "chars": 11081,
+   "source_url": "https://yeswehack.com/programs/vincisa-public-program"
+  },
+  {
+   "program_id": "ywh:grw-trading-fze-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "99febcf783c8a754",
+   "chars": 8681,
+   "source_url": "https://yeswehack.com/programs/grw-trading-fze-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:onedoc-sa-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "fb19d8560770986a",
+   "chars": 9507,
+   "source_url": "https://yeswehack.com/programs/onedoc-sa-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:harman-international-public-bug-bounty",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "1cbf47ba0ff0bdbb",
+   "chars": 9434,
+   "source_url": "https://yeswehack.com/programs/harman-international-public-bug-bounty"
+  },
+  {
+   "program_id": "ywh:decathlon",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "f0b6de116995bc32",
+   "chars": 8539,
+   "source_url": "https://yeswehack.com/programs/decathlon"
+  },
+  {
+   "program_id": "ywh:sante-publique-france-bugbounty-public-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "59a223e2c2e8c734",
+   "chars": 8546,
+   "source_url": "https://yeswehack.com/programs/sante-publique-france-bugbounty-public-program"
+  },
+  {
+   "program_id": "ywh:thuringer-aufbaubank-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "d7cbd2aca41de3e3",
+   "chars": 7143,
+   "source_url": "https://yeswehack.com/programs/thuringer-aufbaubank-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:doctolib-public-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "e555f02e1f562b76",
+   "chars": 21406,
+   "source_url": "https://yeswehack.com/programs/doctolib-public-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:yes-we-hack",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "3a012d8708cd9460",
+   "chars": 8030,
+   "source_url": "https://yeswehack.com/programs/yes-we-hack"
+  },
+  {
+   "program_id": "ywh:telenor-sweden-public-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "3383030e8b0a9773",
+   "chars": 11342,
+   "source_url": "https://yeswehack.com/programs/telenor-sweden-public-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:bookbeat",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "b34e407ff7051722",
+   "chars": 7560,
+   "source_url": "https://yeswehack.com/programs/bookbeat"
+  },
+  {
+   "program_id": "ywh:govtech-vulnerability-disclosure-programme-policy",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "6e301dd910ff2b61",
+   "chars": 9472,
+   "source_url": "https://yeswehack.com/programs/govtech-vulnerability-disclosure-programme-policy"
+  },
+  {
+   "program_id": "ywh:bug-bounty-program-blablacar",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "626d74dae8890fd2",
+   "chars": 8129,
+   "source_url": "https://yeswehack.com/programs/bug-bounty-program-blablacar"
+  },
+  {
+   "program_id": "ywh:atg-public-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "81bc6cbe60fac838",
+   "chars": 7983,
+   "source_url": "https://yeswehack.com/programs/atg-public-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:private-internet-access-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "39b698bca1f36416",
+   "chars": 12246,
+   "source_url": "https://yeswehack.com/programs/private-internet-access-bug-bounty-program"
+  },
+  {
+   "program_id": "ywh:cyberghost-bug-bounty-program",
+   "platform": "ywh",
+   "split": "test",
+   "hash": "af7d035d0e871ce9",
+   "chars": 11490,
+   "source_url": "https://yeswehack.com/programs/cyberghost-bug-bounty-program"
+  }
+ ]
+}
