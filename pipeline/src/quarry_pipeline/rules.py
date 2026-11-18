@@ -27,7 +27,7 @@ FIELDS = ["scanning", "rate_limit", "required_header", "test_accounts", "exclude
 
 class Field_(BaseModel):
     value: str = Field(max_length=400)
-    quote: str = Field(default="", max_length=600)
+    quote: str = Field(default="", max_length=1200)
     section: str = Field(default="", max_length=200)
 
 
@@ -41,7 +41,7 @@ class SafeHarbourField(Field_):
 
 class ListField(BaseModel):
     value: list[str] = Field(default_factory=list, max_length=20)
-    quote: str = Field(default="", max_length=600)
+    quote: str = Field(default="", max_length=1200)
     section: str = Field(default="", max_length=200)
 
     @field_validator("value")
@@ -125,6 +125,7 @@ def section_of(quote: str, text: str) -> str:
 
 
 NEUTRAL = {"unclear", "none stated", ""}
+SCAN_WORDS = re.compile(r"scan|automat|tool|fuzz|crawl|spider|nuclei|burp|requests? (?:per|/)|req/s|rps|rate", re.I)
 
 
 def ground(card: dict, policy_text: str) -> tuple[dict, dict]:
@@ -150,6 +151,11 @@ def ground(card: dict, policy_text: str) -> tuple[dict, dict]:
             if real:
                 fld["section"] = real
         out[f] = fld
+    # safety guard: a permissive scanning value must be quoted from text about scanning/tools/rates
+    sc = out["scanning"]
+    if sc["value"] in ("yes", "limited") and not SCAN_WORDS.search(sc.get("quote", "")):
+        sc["value"], sc["quote"] = "unclear", ""
+        report["scanning"] = "guard_downgraded"
     return out, report
 
 

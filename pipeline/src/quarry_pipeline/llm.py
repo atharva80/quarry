@@ -28,6 +28,8 @@ GATEWAY = "quarry"
 API_STYLE = os.environ.get("LLM_API_STYLE", "responses")
 GATEWAY_PROVIDER = os.environ.get("LLM_GATEWAY_PROVIDER", "custom-quarry-commandcode")
 PRIMARY_MODEL = os.environ.get("LLM_MODEL", "deepseek/deepseek-v4.1-flash")
+BASE_URL = os.environ.get("LLM_BASE_URL", "https://api.commandcode.ai/provider/v1")
+USE_GATEWAY = os.environ.get("LLM_VIA_GATEWAY", "1" if os.environ.get("CLOUDFLARE_API_TOKEN") else "0") == "1"
 FALLBACK_MODEL = "@cf/google/gemma-4-26b-a4b-it"
 EMBED_MODEL = "@cf/google/embeddinggemma-2"
 # USD per million tokens (input, output), from the providers' pricing pages (verified 2026-11-19)
@@ -181,9 +183,12 @@ class LLM:
                      "tool_choice": {"type": "function", "name": tool["name"]},
                      "reasoning": {"effort": "low" if effort in ("none", "low") else effort},
                      "max_output_tokens": max_tokens}
-            url = f"https://gateway.ai.cloudflare.com/v1/{ACCOUNT_ID}/{GATEWAY}/{GATEWAY_PROVIDER}/responses"
-            headers = {"Authorization": f"Bearer {self.key}", "cf-aig-authorization": f"Bearer {cf_token()}",
-                       "Content-Type": "application/json"}
+            headers = {"Authorization": f"Bearer {self.key}", "Content-Type": "application/json"}
+            if USE_GATEWAY:  # CI: the scoped API token can authenticate to the gateway
+                url = f"https://gateway.ai.cloudflare.com/v1/{ACCOUNT_ID}/{GATEWAY}/{GATEWAY_PROVIDER}/responses"
+                headers["cf-aig-authorization"] = f"Bearer {cf_token()}"
+            else:  # local: wrangler's OAuth token can't, so call the provider directly (same retries/backoff)
+                url = f"{BASE_URL}/responses"
             data = _from_responses(self._post(url, headers, rbody))
         elif self.primary:
             body["model"] = PRIMARY_MODEL

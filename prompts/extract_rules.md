@@ -18,6 +18,12 @@ Fields:
   - "no": the policy prohibits automated scanners/tools/mass scanning.
   - "unclear": not addressed, or the policy is ambiguous or contradicts itself.
   Being wrong with "yes" or "limited" can get a researcher banned. If in doubt, answer "unclear".
+  Not evidence of permission: a ban on DoS / "large-scale automated attacks", a required header or User-Agent, or
+  "don't harm our services". Those alone mean "unclear" (or "no" if they ban scanners). "limited" needs text that
+  permits automated tools under conditions (e.g. "automated scanning is allowed up to 5 req/s"). A ban limited to
+  high-traffic/noisy automation ("automated testing that generates significant traffic", "scanners or tools that
+  generate a large amount of network traffic") also means "limited": light tooling is implicitly allowed.
+  A ban on automated scanners/tools in general ("refrain from using automated tools") means "no".
 - `rate_limit`: an explicit request-rate limit (e.g. "5 requests per second"), else "none stated".
 - `required_header`: an HTTP header or User-Agent the researcher must send (e.g. "X-Bug-Bounty: <username>"),
   else "none stated".

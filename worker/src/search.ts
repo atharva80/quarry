@@ -1,6 +1,6 @@
 /**
- * Smart search: query embedding → int8 brute-force cosine (WASM) ∥ D1 FTS5 BM25 → reciprocal rank fusion →
- * bge-reranker on the top 30 → personal score with reasons. Every stage degrades: no Workers AI → keyword only;
+ * Smart search: query embedding → int8 brute-force cosine (WASM) ∥ D1 FTS5 BM25 → weighted reciprocal rank fusion
+ * (2:1) → personal score with reasons. A bge-reranker stage exists but is off: it measured worse (eval 2). Every stage degrades: no Workers AI → keyword only;
  * no D1 → vector only; nothing → empty with mode "unavailable" (the client keeps its in-browser keyword results).
  */
 import { type CatalogProgram, excludedBy, type Profile, scoreProgram } from "../../ranking/score";
@@ -39,12 +39,15 @@ export async function embedQuery(env: Env, q: string): Promise<number[]> {
   return r.data[0].embedding as number[];
 }
 
-export function rrf(lists: { id: string }[][], k = RRF_K): Map<string, number> {
+/** Weighted reciprocal rank fusion. Weights picked on the dev queries (evals/results/search.json): vector 2, keyword 1. */
+export function rrf(lists: { id: string }[][], weights: number[] = [2, 1], k = RRF_K): Map<string, number> {
   const s = new Map<string, number>();
-  for (const list of lists)
+  lists.forEach((list, li) => {
+    const w = weights[li] ?? 1;
     list.forEach((x, i) => {
-      s.set(x.id, (s.get(x.id) ?? 0) + 1 / (k + i + 1));
+      s.set(x.id, (s.get(x.id) ?? 0) + w / (k + i + 1));
     });
+  });
   return s;
 }
 
@@ -109,7 +112,8 @@ export async function search(
   let relevance = new Map<string, number>();
   const maxFused = Math.max(...candidates.map((c) => c.fused), 1e-9);
   for (const c of candidates) relevance.set(c.id, c.fused / maxFused);
-  if (o.rerank !== false && candidates.length > 1) {
+  // Off by default: on the dev queries bge-reranker-base lowered nDCG@10 (see evals/results/search.json).
+  if (o.rerank === true && candidates.length > 1) {
     try {
       // biome-ignore lint/suspicious/noExplicitAny: model typings lag the catalog
       const rr: any = await env.AI.run(

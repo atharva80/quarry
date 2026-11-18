@@ -1,0 +1,169 @@
+{
+  "eval": "search",
+  "date": "2026-11-18T23:47Z",
+  "commit": "320e25c",
+  "corpus": "open programs at eval time",
+  "judged_by": "agent-labelled: 5 Claude Sonnet 5.5 subagents (20 queries each), rubric evals/data/search/RUBRIC.md; owner reviews a sample",
+  "notes": "Relevance pooled from the top 10 of every system, graded 0-3 (evals/data/search/RUBRIC.md). Unjudged documents count as 0, so recall@20 (relevant = grade >= 2) is a lower bound for every system. q001-q030 dev, q031-q100 hold-out test (never used for tuning).",
+  "systems": {
+    "keyword": {
+      "test": {
+        "ndcg@10": 0.4154,
+        "recall@20": 0.4151,
+        "queries": 70,
+        "queries_with_relevant": 69
+      },
+      "dev": {
+        "ndcg@10": 0.4807,
+        "recall@20": 0.4452,
+        "queries": 30,
+        "queries_with_relevant": 29
+      },
+      "all": {
+        "ndcg@10": 0.435,
+        "recall@20": 0.424,
+        "queries": 100,
+        "queries_with_relevant": 98
+      }
+    },
+    "emb_f768": {
+      "test": {
+        "ndcg@10": 0.6673,
+        "recall@20": 0.8023,
+        "queries": 70,
+        "queries_with_relevant": 69
+      },
+      "dev": {
+        "ndcg@10": 0.6447,
+        "recall@20": 0.6897,
+        "queries": 30,
+        "queries_with_relevant": 29
+      },
+      "all": {
+        "ndcg@10": 0.6605,
+        "recall@20": 0.769,
+        "queries": 100,
+        "queries_with_relevant": 98
+      }
+    },
+    "emb_f256": {
+      "test": {
+        "ndcg@10": 0.6131,
+        "recall@20": 0.7424,
+        "queries": 70,
+        "queries_with_relevant": 69
+      },
+      "dev": {
+        "ndcg@10": 0.6332,
+        "recall@20": 0.6673,
+        "queries": 30,
+        "queries_with_relevant": 29
+      },
+      "all": {
+        "ndcg@10": 0.6191,
+        "recall@20": 0.7202,
+        "queries": 100,
+        "queries_with_relevant": 98
+      }
+    },
+    "emb_i8_256": {
+      "test": {
+        "ndcg@10": 0.6167,
+        "recall@20": 0.7393,
+        "queries": 70,
+        "queries_with_relevant": 69
+      },
+      "dev": {
+        "ndcg@10": 0.6191,
+        "recall@20": 0.6543,
+        "queries": 30,
+        "queries_with_relevant": 29
+      },
+      "all": {
+        "ndcg@10": 0.6174,
+        "recall@20": 0.7141,
+        "queries": 100,
+        "queries_with_relevant": 98
+      }
+    },
+    "hybrid": {
+      "test": {
+        "ndcg@10": 0.5947,
+        "recall@20": 0.8428,
+        "queries": 70,
+        "queries_with_relevant": 69
+      },
+      "dev": {
+        "ndcg@10": 0.594,
+        "recall@20": 0.7122,
+        "queries": 30,
+        "queries_with_relevant": 29
+      },
+      "all": {
+        "ndcg@10": 0.5945,
+        "recall@20": 0.8042,
+        "queries": 100,
+        "queries_with_relevant": 98
+      }
+    },
+    "hybrid_rerank": {
+      "test": {
+        "ndcg@10": 0.5493,
+        "recall@20": 0.8193,
+        "queries": 70,
+        "queries_with_relevant": 69
+      },
+      "dev": {
+        "ndcg@10": 0.6125,
+        "recall@20": 0.7438,
+        "queries": 30,
+        "queries_with_relevant": 29
+      },
+      "all": {
+        "ndcg@10": 0.5682,
+        "recall@20": 0.797,
+        "queries": 100,
+        "queries_with_relevant": 98
+      }
+    },
+    "hybrid_wrrf_2to1 (shipped)": {
+      "test": {
+        "ndcg@10": 0.6282,
+        "recall@20": 0.8121,
+        "queries": 70
+      },
+      "dev": {
+        "ndcg@10": 0.6215,
+        "recall@20": 0.7492,
+        "queries": 30
+      }
+    }
+  },
+  "tuning": {
+    "done_on": "dev queries q001-q030 only",
+    "grid": {
+      "wrrf_v1_k1": [
+        0.5939,
+        0.7122
+      ],
+      "wrrf_v2_k1": [
+        0.6215,
+        0.7492
+      ],
+      "wrrf_v3_k1": [
+        0.6156,
+        0.7504
+      ],
+      "wrrf_v4_k1": [
+        0.6156,
+        0.7206
+      ],
+      "wrrf_v1_k0": [
+        0.6172,
+        0.6528
+      ]
+    },
+    "chosen": "wrrf_v2_k1",
+    "note": "The first shipped config (hybrid + reranker, 1:1 RRF) is kept as its own row; it scored lowest of the embedding systems on test."
+  }
+}

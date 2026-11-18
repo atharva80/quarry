@@ -1,0 +1,40 @@
+{
+  "eval": "rule extraction",
+  "split": "dev",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "date": "2026-11-18T23:59Z",
+  "commit": "320e25c",
+  "labels": "agent-labelled (Claude Sonnet 5.5, two passes); owner reviews 20 (docs/evals.md)",
+  "policies": 50,
+  "failed": 0,
+  "accuracy": {
+    "scanning": 0.92,
+    "rate_limit": 0.98,
+    "required_header": 0.98,
+    "test_accounts": 0.96,
+    "excluded_classes": 0.98,
+    "safe_harbour": 0.9,
+    "bounty_table": 0.96,
+    "disclosure": 1.0
+  },
+  "accuracy_mean": 0.96,
+  "quote_faithfulness": 0.996,
+  "quotes_checked": 263,
+  "wrong_scanning_allowed": 1,
+  "wrong_scanning_allowed_ids": [
+    "h1:luminor"
+  ],
+  "usd_per_policy": 0.00262,
+  "usd_total": 0.1311,
+  "latency_s_p50": 7.62,
+  "latency_s_p95": 12.87,
+  "scanning_confusion": {
+    "label=limited pred=limited": 18,
+    "label=limited pred=no": 1,
+    "label=limited pred=unclear": 1,
+    "label=no pred=no": 10,
+    "label=no pred=unclear": 1,
+    "label=unclear pred=limited": 1,
+    "label=unclear pred=unclear": 18
+  }
+}
