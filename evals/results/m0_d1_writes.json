@@ -1,0 +1,21 @@
+{
+  "programs": 1000,
+  "in_scope_assets": 10835,
+  "lean": {
+    "statements": 2540,
+    "rows_written": 3080,
+    "seconds": 11.8,
+    "recent_assets": 540
+  },
+  "rerun_unchanged": {
+    "statements": 0
+  },
+  "full_assets_table": {
+    "statements": 10838,
+    "rows_written": 21675,
+    "seconds": 32.0
+  },
+  "commit": "uncommitted",
+  "date": "2026-11-18T22:47:38Z",
+  "bbwatch_state_saved_at": 1795041521
+}

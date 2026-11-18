@@ -1,0 +1,16 @@
+[project]
+name = "quarry-evals"
+version = "0.1.0"
+description = "Quarry evals: rule extraction, search, recommendations, agent"
+requires-python = ">=3.12"
+dependencies = ["quarry-pipeline", "numpy>=2.1", "httpx>=0.27", "pydantic>=2.9"]
+
+[tool.uv.sources]
+quarry-pipeline = { workspace = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quarry_evals"]

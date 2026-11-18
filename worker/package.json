@@ -1,0 +1,23 @@
+{
+  "name": "quarry-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "types": "wrangler types"
+  },
+  "dependencies": {
+    "agents": "0.33.0",
+    "hono": "4.13.19",
+    "zod": "4.6.7",
+    "@modelcontextprotocol/server": "2.4.0"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "4.1.12",
+    "wrangler": "4.165.0"
+  }
+}

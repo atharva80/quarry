@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "quarry",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-18",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "account_id": "c413669eec93af689722b3199813448b",
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*", "/mcp"] },
+  "ai": { "binding": "AI" },
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  "durable_objects": { "bindings": [{ "name": "BENCH_AGENT", "class_name": "BenchAgent" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["BenchAgent"] }],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "quarry-db", "database_id": "092c53fc-f0aa-4363-8347-2bd75c5dc4bd" },
+    { "binding": "SCRATCH", "database_name": "quarry-db-scratch", "database_id": "61f7c3c6-5499-4c94-a718-b8bcbe6535b9" }
+  ]
+}

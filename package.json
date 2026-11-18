@@ -1,0 +1,20 @@
+{
+  "name": "quarry",
+  "private": true,
+  "workspaces": [
+    "worker",
+    "web"
+  ],
+  "scripts": {
+    "lint": "biome check worker/src web/src",
+    "typecheck": "npm run typecheck -w worker && npm run typecheck -w web",
+    "test": "npm test -w worker"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.8"
+  },
+  "allowScripts": {
+    "workerd@1.20261118.1": true,
+    "esbuild@0.28.2": true
+  }
+}
