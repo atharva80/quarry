@@ -1,6 +1,9 @@
 // M0 benchmarks (tests a and b). Removed after M0; results in docs/decisions.md.
 import { Agent, getAgentByName } from "agents";
-import { type Matrix, parseMatrix, quantiseQuery, topK } from "./vectors";
+import dotWasm from "./dot.wasm";
+import { type Matrix, parseMatrix, quantiseQuery, topK, WasmDots } from "./vectors";
+
+let kernel: WasmDots | null = null;
 
 let matrix: Matrix | null = null;
 
@@ -15,7 +18,9 @@ export async function benchVectors(env: Env, req: Request): Promise<Response> {
   }
   const q = new Float32Array(matrix.d);
   for (let i = 0; i < q.length; i++) q[i] = Math.sin(i * 1.7 + Number(new URL(req.url).searchParams.get("s") || 1));
-  const res = topK(matrix, quantiseQuery(q), 30);
+  const useWasm = new URL(req.url).searchParams.get("js") !== "1";
+  if (useWasm && !kernel) kernel = new WasmDots(dotWasm);
+  const res = topK(matrix, quantiseQuery(q), 30, undefined, useWasm ? (kernel ?? undefined) : undefined);
   return Response.json({ top: res.slice(0, 3) });
 }
 
@@ -36,7 +41,7 @@ export class BenchAgent extends Agent<Env> {
       { role: "user", content: question },
     ];
     // biome-ignore lint/suspicious/noExplicitAny: bench
-    const first: any = await env_ai(this.env).run("@cf/deepseek-ai/deepseek-v4.1-flash-1017" as any, {
+    const first: any = await env_ai(this.env).run("@cf/google/gemma-4-26b-a4b-it" as any, {
       messages,
       tools,
       reasoning_effort: "none",
@@ -53,7 +58,7 @@ export class BenchAgent extends Agent<Env> {
       messages.push({ role: "tool", content: toolResult, tool_call_id: call.id });
     }
     // biome-ignore lint/suspicious/noExplicitAny: bench
-    const second: any = await env_ai(this.env).run("@cf/deepseek-ai/deepseek-v4.1-flash-1017" as any, {
+    const second: any = await env_ai(this.env).run("@cf/google/gemma-4-26b-a4b-it" as any, {
       messages,
       reasoning_effort: "none",
       max_completion_tokens: 200,

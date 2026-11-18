@@ -1,0 +1,42 @@
+{
+  "test": "M0 (a) brute-force int8 search CPU and (b) Agent DO turn CPU, deployed Worker on the Free plan",
+  "source": "wrangler tail --format json (cpuTime/wallTime per invocation, ms)",
+  "matrix": "3442 x 256 int8 (random data; CPU does not depend on values)",
+  "vector_search_wasm_simd": {
+    "n": 100,
+    "cpu_p50": 2,
+    "cpu_p95": 6,
+    "cpu_max": 9,
+    "wall_p50": 2
+  },
+  "vector_search_plain_js": {
+    "n": 60,
+    "cpu_p50": 5,
+    "cpu_p95": 12,
+    "cpu_max": 19,
+    "wall_p50": 5
+  },
+  "agent_turn_fetch_handler": {
+    "n": 10,
+    "cpu_p50": 1,
+    "cpu_p95": 2,
+    "cpu_max": 2,
+    "wall_p50": 6373
+  },
+  "agent_turn_durable_object": {
+    "n": 20,
+    "cpu_p50": 0,
+    "cpu_p95": 6,
+    "cpu_max": 6,
+    "wall_p50": 4078
+  },
+  "agent_model": "@cf/google/gemma-4-26b-a4b-it (Workers AI; DeepSeek V4.1 Flash is not available on Workers Free)",
+  "first_attempt_plain_js_only": {
+    "n": 80,
+    "cpu_p50": 9,
+    "cpu_p95": 20,
+    "cpu_max": 32
+  },
+  "code_commit": "9b7d8b1 + worker/src/dot.wat, vectors.ts WasmDots (committed next)",
+  "date": "2026-11-18T23:05Z"
+}

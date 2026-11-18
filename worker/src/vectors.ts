@@ -42,22 +42,72 @@ export function quantiseQuery(q: ArrayLike<number>): { q: Int8Array; scale: numb
   return { q: out, scale: maxAbs / 127 };
 }
 
-/** Top-k rows by int8 dot product. O(N*D) integer multiply-adds; ~0.9M for 3.4k x 256. */
+/** Raw int8 dot products in plain JS (reference implementation; also used where WASM is unavailable). */
+export function dotsJS(m: Matrix, q: Int8Array): Int32Array {
+  const { n, d, data } = m;
+  const out = new Int32Array(n);
+  for (let r = 0; r < n; r++) {
+    let s = 0;
+    const off = r * d;
+    for (let j = 0; j < d; j++) s += data[off + j] * q[j];
+    out[r] = s;
+  }
+  return out;
+}
+
+interface DotKernel {
+  mem: WebAssembly.Memory;
+  dots: (mat: number, q: number, n: number, d: number, out: number) => void;
+}
+
+/**
+ * The same dot products in WebAssembly SIMD (src/dot.wat). On the Free plan most requests land on isolates
+ * whose JS hasn't been JIT-optimised yet; measured in M0 the JS loop cost p95 20 ms CPU, the WASM kernel is
+ * compiled ahead of time (see docs/decisions.md, test a).
+ */
+export class WasmDots {
+  private k: DotKernel;
+  private qPtr = 0;
+  private outPtr = 0;
+  private matPtr = 0;
+  private loadedFor: Matrix | null = null;
+
+  constructor(module: WebAssembly.Module) {
+    const inst = new WebAssembly.Instance(module, {});
+    this.k = { mem: inst.exports.mem as WebAssembly.Memory, dots: inst.exports.dots as DotKernel["dots"] };
+  }
+
+  private load(m: Matrix) {
+    const need = m.n * m.d + m.d + 4 * m.n + 64;
+    const have = this.k.mem.buffer.byteLength;
+    if (need > have) this.k.mem.grow(Math.ceil((need - have) / 65536));
+    this.matPtr = 0;
+    this.qPtr = m.n * m.d;
+    this.outPtr = (this.qPtr + m.d + 15) & ~15;
+    new Int8Array(this.k.mem.buffer, this.matPtr, m.n * m.d).set(m.data);
+    this.loadedFor = m;
+  }
+
+  dots(m: Matrix, q: Int8Array): Int32Array {
+    if (this.loadedFor !== m) this.load(m);
+    new Int8Array(this.k.mem.buffer, this.qPtr, m.d).set(q);
+    this.k.dots(this.matPtr, this.qPtr, m.n, m.d, this.outPtr);
+    return new Int32Array(this.k.mem.buffer, this.outPtr, m.n);
+  }
+}
+
+/** Top-k rows by cosine, from int8 dot products (WASM when given, else JS). */
 export function topK(
   m: Matrix,
   query: { q: Int8Array; scale: number },
   k: number,
   allow?: (i: number) => boolean,
+  kernel?: WasmDots,
 ): { i: number; score: number }[] {
-  const { n, d, data, scales } = m;
-  const q = query.q;
+  const { n, scales } = m;
+  const raw = kernel ? kernel.dots(m, query.q) : dotsJS(m, query.q);
   const scores = new Float32Array(n);
-  for (let r = 0; r < n; r++) {
-    let s = 0;
-    const off = r * d;
-    for (let j = 0; j < d; j++) s += data[off + j] * q[j];
-    scores[r] = s * scales[r];
-  }
+  for (let r = 0; r < n; r++) scores[r] = raw[r] * scales[r];
   // partial selection: keep a small sorted buffer
   const best: { i: number; score: number }[] = [];
   let floor = -Infinity;

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "fit": 0.35,
+  "freshness": 0.25,
+  "payout": 0.15,
+  "competition": 0.15,
+  "rules": 0.05,
+  "saved_similar": 0.05,
+  "notes": "Hand-set v1 weights (no training data yet). Changing this file triggers the PR eval job."
+}
