@@ -44,7 +44,10 @@ each file). Where current docs contradicted the original plan, the docs won and 
 - The plan said: read Command Code's terms first; if they don't clearly allow a deployed public app, use
   Fireworks. They don't: the ToS licenses use "for your internal business or personal purposes" and prohibits use
   "for the benefit of a third party". I recommended Fireworks (`accounts/fireworks/models/deepseek-v4p1-flash-1017`).
-- **The owner chose Command Code anyway** (their existing plan), accepting that risk. It's one config change away
+- **The owner chose Command Code** on their GOAT plan ($10/month, including up to $100 of DeepSeek V4.1 Flash
+  credits and API-key access). The owner reads the plan's API access as usable anywhere; the ToS clauses above are
+  noted here for completeness. The USD figures Quarry tracks are list prices per token, so on this plan the real
+  cost is the flat $10/month until the credits run out. It's one config change away
   from Fireworks: `LLM_BASE_URL`, `LLM_MODEL`, `LLM_API_STYLE=chat`, `LLM_GATEWAY_PROVIDER=custom-quarry-fireworks`
   (the gateway custom provider already exists).
 - **AI Gateway:** custom provider `quarry-commandcode` returned 502 ("provider did not return a valid response")
