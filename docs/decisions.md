@@ -78,6 +78,15 @@ each file). Where current docs contradicted the original plan, the docs won and 
   were real but not about permission (an "Access: no restrictions, but rate limits apply" line; a sentence about not
   submitting raw scanner output). Neither said "yes". Not fixed on the test set; a stricter guard needs a fresh set.
 
+## Agent (eval 4)
+- v1 → v2 fixes, found by the eval: the stored profile's hard constraints are now checked in code inside grounding
+  (not just via the model's filters), assistant turns are remembered with the program ids they named (a follow-up had
+  resolved "Kiteworks" to a different platform's program), and `trim()` now drops offending ids. That last one was a
+  real bug: a regex matched the program name instead of its id. The shortlist rate went down (22/23 → 20/23) because
+  more answers get trimmed; recorded, not hidden.
+- The fallback model (Gemma 4 26B) takes 34 s p50 per turn and some multi-tool turns exceed 3 minutes, so it's a
+  degraded mode, not a peer.
+
 ## Bundling
 - `ZodLazy is not a constructor` at deploy: the MCP SDK runs `lazy()` at module top level before zod's classes are
   initialised in the bundle. Fix: `import("./mcp")` lazily on the `/mcp` route.

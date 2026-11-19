@@ -22,7 +22,8 @@ H = {"authorization": f"Bearer {os.environ.get('ADMIN_TOKEN', '')}", "content-ty
 
 
 def chat(msg: str) -> dict:
-    r = httpx.post(f"{SITE}/api/chat", json={"uid": secrets.token_hex(16), "message": msg}, timeout=180)
+    # admin auth only skips Turnstile; the budget checks under test still apply
+    r = httpx.post(f"{SITE}/api/chat", headers=H, json={"uid": secrets.token_hex(16), "message": msg}, timeout=300)
     return {"status": r.status_code, **(r.json() if r.status_code == 200 else {"error": r.text[:200]})}
 
 

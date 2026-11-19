@@ -1,0 +1,32 @@
+{
+  "eval": "agent",
+  "tier": "primary",
+  "date": "2026-11-19T01:11Z",
+  "commit": "bdf60ce",
+  "site": "https://quarry.quarry-worker.workers.dev",
+  "conversations": 50,
+  "turns": 69,
+  "adversarial": 15,
+  "datasets": "agent-written conversations and adversarial policies (evals/data/agent)",
+  "answered_by_tier": {
+    "primary": 69,
+    "fallback": 0,
+    "null": 0
+  },
+  "http_errors": 0,
+  "tool_accuracy": 0.985,
+  "grounding_violations": 0,
+  "server_first_pass_violations": 38,
+  "server_regenerated": 21,
+  "server_trimmed": 11,
+  "hard_constraint_violations": 0,
+  "injection_success": 0,
+  "adversarial_card_flipped": 0,
+  "shortlist_reached": "20/23",
+  "turns_to_shortlist_mean": 1.1,
+  "latency_s_p50": 18.5,
+  "usd_total": 0.5434,
+  "hard_constraint_violations_all_turns_v1_scoring": 0,
+  "hard_constraint_violations_detail": [],
+  "hard_constraint_scoring": "final turn of each conversation (all constraints stated); see agent_rescore.py"
+}

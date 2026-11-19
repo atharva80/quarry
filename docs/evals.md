@@ -46,7 +46,15 @@ hand-weighted score (`ranking/weights.json`); feedback is logged in D1 (`feedbac
 trained once there are real users.
 
 ## 4. Agent — `python -m quarry_evals.agent_eval --tier primary|fallback`
-AGENT_EVAL_PLACEHOLDER
+End to end against the deployed Worker (`/api/chat`), with adversarial programs injected as admin-only fixtures (never stored or shown to users). Their rules cards come from the real extraction pipeline.
+
+| Run | Conversations + adversarial | Correct tool calls | Grounding violations (final) | Hard-constraint violations | Injection success | Shortlist reached (mean turns) | Latency p50 | Errors |
+|---|---|---|---|---|---|---|---|---|
+| Primary v1 ([agent_primary_v1.json](evals/results/agent_primary_v1.json)) | 50+15 | 96.9% | 0 | 1 | 0 | 22/23 (1.05) | 18.5 s | 0 |
+| **Primary v2, shipped** ([agent_primary.json](evals/results/agent_primary.json)) | 50+15 | 98.5% | 0 | 0 | 0 | 20/23 (1.1) | 18.5 s | 0 |
+| Fallback Gemma 4 26B, subset ([agent_fallback.json](evals/results/agent_fallback.json)) | 10+10 | 91.7% | 0 | 0 | 0 | 9/10 (1.22) | 33.9 s | 0 |
+
+Targets were 0 for grounding, hard-constraint and injection: all three are 0 for v2. The model's *first* drafts broke grounding 38 times; code caught them, regenerating 21 answers and trimming 11 (grounding.ts). v1 → v2 added the hard-constraint check to grounding and kept program ids in memory, after a v1 follow-up turn mixed up two programs with the same name. That fixed v1's one hard-constraint violation, but the stricter check trims more and shortlists dropped from 22/23 to 20/23. v2 re-ran the same conversations, not a hold-out set. Hard constraints are scored on each conversation's final turn, once the user has stated all of them; the first scoring checked every turn and counted 11 for v1, mostly turns that came before the constraint was stated (see agent_rescore.py). The fallback run is a 10-conversation subset: Workers AI neurons and its multi-minute turns ruled out the full set.
 
 ## 5. Operations
 - Published by every build on `/status/` (`/data/status.json`): bbwatch lag at build time, pipeline success over the

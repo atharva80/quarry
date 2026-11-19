@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-19T01:16Z",
+  "commit": "4f639d6",
+  "budget_spent": {
+    "status": 200,
+    "tier": "fallback",
+    "limited": false,
+    "expect": "tier=fallback, still answers"
+  },
+  "budget_and_neurons_spent": {
+    "status": 200,
+    "limited": true,
+    "reply": "Quarry has hit today's AI budget, so chat is paused until 00:00 UTC. Search, program pages and alerts still work. (Heavy user? You can bring your own API key in",
+    "expect": "limited=true with the daily-limit message"
+  },
+  "search_during_budget_limit": {
+    "mode": "hybrid",
+    "results": 10
+  },
+  "restored": {
+    "day": "2026-11-19",
+    "usd": 1.0946614000000001,
+    "neurons": 4848.726974487305,
+    "primary_calls": 584,
+    "fallback_calls": 127,
+    "refused": 7,
+    "inflight": 0
+  },
+  "static_without_worker": {
+    "run_worker_first": [
+      "/api/*",
+      "/mcp"
+    ],
+    "note": "pages, program JSON, catalog, feeds and the in-browser keyword search are static assets, served free and uncapped"
+  },
+  "d1_writes_exhausted": {
+    "note": "cli.build(): any D1 error raises before the deploy step; verified by code path, not by burning the quota"
+  }
+}
