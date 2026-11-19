@@ -62,7 +62,10 @@ def chat(uid: str, message: str, tier: str, fixtures: list | None = None) -> dic
         h["x-quarry-eval-fixtures"] = base64.b64encode(json.dumps(fixtures).encode()).decode()
     t0 = time.time()
     for attempt in range(4):
-        r = httpx.post(f"{SITE}/api/chat", headers=h, json={"uid": uid, "message": message}, timeout=180)
+        try:
+            r = httpx.post(f"{SITE}/api/chat", headers=h, json={"uid": uid, "message": message}, timeout=300)
+        except httpx.TimeoutException:
+            return {"error": "client timeout after 300 s", "_status": 0, "_seconds": round(time.time() - t0, 1)}
         if r.status_code == 429:
             time.sleep(8 * (attempt + 1))
             continue
