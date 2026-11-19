@@ -147,7 +147,8 @@ def main() -> None:
 
     # rules cards for the adversarial fixtures come from the real extraction pipeline (same model tier)
     ledger = Ledger("quarry-db")
-    llm = LLM(cap_usd=float(os.environ.get("EVAL_DAILY_USD_CAP", "8.0")), primary=(a.tier == "primary"), ledger=ledger)
+    # cards come from the pipeline, which always uses the primary model; the tier only changes who answers chat
+    llm = LLM(cap_usd=float(os.environ.get("EVAL_DAILY_USD_CAP", "8.0")), primary=True, ledger=ledger)
     cards = {}
     for it in adv:
         card, _ = extract(llm, it["name"], it.get("platform", "h1"), it["policy"])
