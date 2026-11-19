@@ -2,8 +2,23 @@ import { describe, expect, it } from "vitest";
 import { type CatalogProgram, excludedBy, rank, scoreProgram } from "../../ranking/score";
 
 const base: CatalogProgram = {
-  id: "h1:a", p: "h1", pn: "HackerOne", n: "A", s: "open", b: 1, c: 0, mx: "$5,000", usd: 5000, L: 0,
-  cat: ["api", "web"], na: 5, n7: 0, n14: 0, n30: 0, w30: 0, age: 400,
+  id: "h1:a",
+  p: "h1",
+  pn: "HackerOne",
+  n: "A",
+  s: "open",
+  b: 1,
+  c: 0,
+  mx: "$5,000",
+  usd: 5000,
+  L: 0,
+  cat: ["api", "web"],
+  na: 5,
+  n7: 0,
+  n14: 0,
+  n30: 0,
+  w30: 0,
+  age: 400,
 };
 const now = 1_795_000_000;
 
@@ -30,7 +45,9 @@ describe("personal score", () => {
   it("a 'not my stack' dismissal pushes similar programs down", () => {
     const other = { ...base, id: "h1:b" };
     const before = rank([base, other], {}, now).find((x) => x.id === "h1:b")?.score ?? 0;
-    const after = rank([base, other], { dismissed: [{ id: "h1:a", reason: "not my stack" }] }, now).find((x) => x.id === "h1:b")?.score ?? 0;
+    const after =
+      rank([base, other], { dismissed: [{ id: "h1:a", reason: "not my stack" }] }, now).find((x) => x.id === "h1:b")
+        ?.score ?? 0;
     expect(after).toBeLessThan(before);
   });
 });
