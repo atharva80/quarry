@@ -303,7 +303,13 @@ export function fixtureRow(f: Fixture): ProgramRow {
 
 function fixtureFor(ctx: ToolCtx, ref: string): ProgramRow | null {
   const r = ref.trim().toLowerCase();
-  const f = ctx.fixtures?.find((x) => x.id === ref || x.name.toLowerCase() === r || x.name.toLowerCase().includes(r) || r.includes(x.name.toLowerCase().split(" ")[0]));
+  const f = ctx.fixtures?.find(
+    (x) =>
+      x.id === ref ||
+      x.name.toLowerCase() === r ||
+      x.name.toLowerCase().includes(r) ||
+      r.includes(x.name.toLowerCase().split(" ")[0]),
+  );
   return f ? fixtureRow(f) : null;
 }
 
@@ -392,9 +398,17 @@ export async function runTool(name: ToolName, rawArgs: unknown, ctx: ToolCtx): P
         filters: { platforms: a.platforms, categories: a.categories, bountyOnly: a.bounty_only, minUsd: a.min_usd },
       });
       for (const h of res.results) note(ctx, h.row);
-      const fx = (ctx.fixtures ?? []).map(fixtureRow).filter((r) => a.query.toLowerCase().includes(r.name.toLowerCase().split(" ")[0]));
+      const fx = (ctx.fixtures ?? [])
+        .map(fixtureRow)
+        .filter((r) => a.query.toLowerCase().includes(r.name.toLowerCase().split(" ")[0]));
       for (const r of fx) note(ctx, r);
-      return { mode: res.mode, results: [...fx.map((r) => ({ ...summary(r), why: [] })), ...res.results.map((h) => ({ ...summary(h.row), why: h.reasons }))] };
+      return {
+        mode: res.mode,
+        results: [
+          ...fx.map((r) => ({ ...summary(r), why: [] })),
+          ...res.results.map((h) => ({ ...summary(h.row), why: h.reasons })),
+        ],
+      };
     }
     case "get_program": {
       const p = await need(ctx, a.program);

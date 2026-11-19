@@ -183,7 +183,12 @@ app.post("/api/chat", async (c) => {
     fixtures = JSON.parse(atob(fxHeader)) as Fixture[];
   }
   const admin = isAdmin(c.env, c.req.header("authorization"));
-  const r = await a.chat(b.message, { byok, fixtures, forceFallback: admin && c.req.header("x-quarry-eval-tier") === "fallback", dailyCap: isAdmin(c.env, c.req.header("authorization")) ? 10_000 : undefined });
+  const r = await a.chat(b.message, {
+    byok,
+    fixtures,
+    forceFallback: admin && c.req.header("x-quarry-eval-tier") === "fallback",
+    dailyCap: isAdmin(c.env, c.req.header("authorization")) ? 10_000 : undefined,
+  });
   return c.json({ ...r, turnstile_ok: turnstileOk || undefined });
 });
 

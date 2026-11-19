@@ -188,7 +188,10 @@ export class QuarryAgent extends Agent<Env, AgentState> {
     }
   }
 
-  async chat(message: string, opts: { byok?: Byok | null; dailyCap?: number; fixtures?: Fixture[]; forceFallback?: boolean } = {}): Promise<ChatReply> {
+  async chat(
+    message: string,
+    opts: { byok?: Byok | null; dailyCap?: number; fixtures?: Fixture[]; forceFallback?: boolean } = {},
+  ): Promise<ChatReply> {
     this.fixtures = opts.fixtures ?? [];
     this.ensureTables();
     let st = this.state;
@@ -360,7 +363,10 @@ export class QuarryAgent extends Agent<Env, AgentState> {
     this.setState({ ...this.state, shown });
     this.remember("user", message);
     // keep the exact ids next to the reply, so follow-ups ("why the first one?") refer to the same programs
-    this.remember("assistant", final.programs.length ? `${final.reply}\n[programs named: ${final.programs.join(", ")}]` : final.reply);
+    this.remember(
+      "assistant",
+      final.programs.length ? `${final.reply}\n[programs named: ${final.programs.join(", ")}]` : final.reply,
+    );
     return {
       reply: final.reply,
       programs: final.programs,

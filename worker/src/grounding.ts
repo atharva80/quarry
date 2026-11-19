@@ -18,7 +18,13 @@ export interface FinalAnswer {
   rule_claims: RuleClaim[];
 }
 export interface Violation {
-  kind: "unknown_program" | "closed_program" | "unquoted_rule" | "quote_not_in_policy" | "unlisted_name" | "hard_constraint";
+  kind:
+    | "unknown_program"
+    | "closed_program"
+    | "unquoted_rule"
+    | "quote_not_in_policy"
+    | "unlisted_name"
+    | "hard_constraint";
   detail: string;
   sentence?: string;
   /** the program id the violation is about, when there is one */
@@ -78,7 +84,13 @@ export async function check(a: FinalAnswer, ctx: GroundingCtx): Promise<Violatio
     else if (!s.live) v.push({ kind: "closed_program", id, detail: `${s.name} (${id}) is not accepting reports` });
     else if (ctx.hardCheck) {
       const why = await ctx.hardCheck(id);
-      if (why) v.push({ kind: "hard_constraint", id, detail: `${s.name} (${id}) breaks the user's hard constraint: ${why}`, sentence: s.name });
+      if (why)
+        v.push({
+          kind: "hard_constraint",
+          id,
+          detail: `${s.name} (${id}) breaks the user's hard constraint: ${why}`,
+          sentence: s.name,
+        });
     }
   }
   // names of programs tools surfaced that the reply mentions must be listed (and therefore open)
