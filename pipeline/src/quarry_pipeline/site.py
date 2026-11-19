@@ -216,6 +216,7 @@ def build(programs: list[dict], changes: dict | None, status: dict | None, rules
     # client bundle + PWA files
     if WEB_DIST.exists():
         shutil.copytree(WEB_DIST, out, dirs_exist_ok=True)
+    (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: {SITE_URL}/sitemap.xml\n")
     nfiles = sum(1 for _ in out.rglob("*") if _.is_file())
     return {"pages": pages, "files": nfiles, "catalog_rows": len(rows), "changes": len(entries)}
 

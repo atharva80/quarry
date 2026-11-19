@@ -18,9 +18,11 @@ export interface FinalAnswer {
   rule_claims: RuleClaim[];
 }
 export interface Violation {
-  kind: "unknown_program" | "closed_program" | "unquoted_rule" | "quote_not_in_policy" | "unlisted_name";
+  kind: "unknown_program" | "closed_program" | "unquoted_rule" | "quote_not_in_policy" | "unlisted_name" | "hard_constraint";
   detail: string;
   sentence?: string;
+  /** the program id the violation is about, when there is one */
+  id?: string;
 }
 
 const TRANS: Record<string, string> = { "‘": "'", "’": "'", "“": '"', "”": '"', "–": "-", "—": "-", " ": " " };
@@ -64,14 +66,20 @@ export interface GroundingCtx {
   seen: Map<string, { name: string; live: boolean }>;
   /** names of every known program that tools surfaced (lowercase) -> id */
   policyText: (id: string) => Promise<string | null>;
+  /** why a program breaks the user's hard constraints, or null (ranking/score.ts excludedBy on the stored profile) */
+  hardCheck?: (id: string) => Promise<string | null>;
 }
 
 export async function check(a: FinalAnswer, ctx: GroundingCtx): Promise<Violation[]> {
   const v: Violation[] = [];
   for (const id of a.programs) {
     const s = ctx.seen.get(id);
-    if (!s) v.push({ kind: "unknown_program", detail: `${id} was not returned by any tool this turn` });
-    else if (!s.live) v.push({ kind: "closed_program", detail: `${s.name} (${id}) is not accepting reports` });
+    if (!s) v.push({ kind: "unknown_program", id, detail: `${id} was not returned by any tool this turn` });
+    else if (!s.live) v.push({ kind: "closed_program", id, detail: `${s.name} (${id}) is not accepting reports` });
+    else if (ctx.hardCheck) {
+      const why = await ctx.hardCheck(id);
+      if (why) v.push({ kind: "hard_constraint", id, detail: `${s.name} (${id}) breaks the user's hard constraint: ${why}`, sentence: s.name });
+    }
   }
   // names of programs tools surfaced that the reply mentions must be listed (and therefore open)
   const listed = new Set(a.programs);
@@ -117,13 +125,13 @@ function escapeRe(s: string) {
 export function trim(a: FinalAnswer, v: Violation[]): FinalAnswer {
   const badIds = new Set(
     v
-      .filter((x) => x.kind === "unknown_program" || x.kind === "closed_program")
-      .map((x) => x.detail.match(/\(([^)]+)\)|^(\S+)/)?.[1] ?? x.detail.split(" ")[0]),
+      .filter((x) => x.kind === "unknown_program" || x.kind === "closed_program" || x.kind === "hard_constraint")
+      .map((x) => x.id ?? ""),
   );
   const badQuotes = new Set(v.filter((x) => x.kind === "quote_not_in_policy").map((x) => x.sentence));
   const badSentences = v.filter((x) => x.kind === "unquoted_rule").map((x) => x.sentence ?? "");
   const badNames = v
-    .filter((x) => x.kind === "unlisted_name" || x.kind === "closed_program")
+    .filter((x) => x.kind === "unlisted_name" || x.kind === "closed_program" || x.kind === "hard_constraint")
     .map((x) => (x.sentence ?? "").toLowerCase())
     .filter(Boolean);
   const kept = sentences(a.reply).filter(

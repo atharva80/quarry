@@ -96,7 +96,7 @@ def run(split: str, model: str, limit: int | None, tag: str, workers: int = 4, c
     items = [m for m in man if (split == "all" or m["split"] == split) and m["program_id"] in lab
              and (not only or m["program_id"] in only)][: limit or None]
     ledger = Ledger("quarry-db")
-    llm = LLM(cap_usd=cap, primary=(model == "primary"), ledger=ledger)
+    llm = LLM(cap_usd=cap + ledger.base, primary=(model == "primary"), ledger=ledger)  # cap = this run's own budget
 
     def one(m):
         text = (POL / (m["program_id"].replace(":", "__").replace("/", "_") + ".md")).read_text()

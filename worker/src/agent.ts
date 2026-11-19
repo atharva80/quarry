@@ -6,8 +6,8 @@
 import { Agent } from "agents";
 import { z } from "zod";
 import SYSTEM from "../../prompts/agent_system.md";
-import type { Profile } from "../../ranking/score";
-import { programsByIds } from "./data";
+import { type CatalogProgram, excludedBy, type Profile } from "../../ranking/score";
+import { programsByIds, toCatalog } from "./data";
 import { check, type FinalAnswer, trim, type Violation } from "./grounding";
 import { type Byok, type ChatMessage, chat, LimitReached, type ToolDef, Unavailable } from "./llm";
 import { type Fixture, runTool, type ToolCtx, ToolError, type ToolName, toolDefs } from "./tools";
@@ -314,7 +314,14 @@ export class QuarryAgent extends Agent<Env, AgentState> {
     if (!final) final = { reply: "Sorry, I couldn't finish that. Try rephrasing.", programs: [], rule_claims: [] };
 
     // ---- grounding: check, regenerate once, then trim ----
-    const gctx = { seen: ctx.seen, policyText: (id: string) => this.policyText(id) };
+    const gctx = {
+      seen: ctx.seen,
+      policyText: (id: string) => this.policyText(id),
+      hardCheck: async (id: string) => {
+        const row = ctx.fixtures?.some((f) => f.id === id) ? null : (await programsByIds(this.env, [id])).get(id);
+        return row ? excludedBy(toCatalog(row, Date.now() / 1000) as CatalogProgram, ctx.profile) : null;
+      },
+    };
     let v: Violation[] = await check(final, gctx);
     const grounding = { violations_first: v.length, regenerated: false, trimmed: false };
     if (v.length) {
@@ -352,7 +359,8 @@ export class QuarryAgent extends Agent<Env, AgentState> {
     const shown = [...new Set([...this.state.shown, ...final.programs])].slice(-300);
     this.setState({ ...this.state, shown });
     this.remember("user", message);
-    this.remember("assistant", final.reply);
+    // keep the exact ids next to the reply, so follow-ups ("why the first one?") refer to the same programs
+    this.remember("assistant", final.programs.length ? `${final.reply}\n[programs named: ${final.programs.join(", ")}]` : final.reply);
     return {
       reply: final.reply,
       programs: final.programs,
