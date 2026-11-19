@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import statistics
 import subprocess
@@ -91,7 +92,9 @@ def excluded_recall(label: list, pred: list) -> float:
 def run(split: str, model: str, limit: int | None, tag: str, workers: int = 4, cap: float = 3.0) -> dict:
     man = json.loads((DATA / "manifest.json").read_text())["items"]
     lab = labels()
-    items = [m for m in man if (split == "all" or m["split"] == split) and m["program_id"] in lab][: limit or None]
+    only = set(filter(None, os.environ.get("QUARRY_EVAL_IDS", "").split(",")))
+    items = [m for m in man if (split == "all" or m["split"] == split) and m["program_id"] in lab
+             and (not only or m["program_id"] in only)][: limit or None]
     ledger = Ledger("quarry-db")
     llm = LLM(cap_usd=cap, primary=(model == "primary"), ledger=ledger)
 
@@ -119,7 +122,7 @@ def run(split: str, model: str, limit: int | None, tag: str, workers: int = 4, c
         L = lab[r["program_id"]]["labels"]
         for f in FIELDS:
             per_field[f].append(field_correct(f, L[f], r["card"][f]["value"]))
-        for f, st in (r["meta"].get("grounding") or {}).items():
+        for st in (r["meta"].get("grounding") or {}).values():
             if st in ("ok", "quote_not_found"):
                 faithful[0] += st == "ok"
                 faithful[1] += 1

@@ -170,22 +170,32 @@ def build(args) -> int:
             # prior rules text for policy-change summaries
             todo.sort(key=lambda r: (r["platform"] not in POLICY_PLATFORMS, r["id"]))
             upd = []
-            for r in todo[: args.max_extract]:
+            from concurrent.futures import ThreadPoolExecutor
+
+            def work(r):
                 local = fetch.load_local(r["id"])
                 text = local["text"] if local else (d1.query(DB, f"SELECT text FROM policies WHERE program_id = {d1.q(r['id'])}") or [{}])[0].get("text")
                 if not text:
-                    continue
+                    return r, None, "no text"
                 try:
-                    card, meta = extract(llm, r["name"], r["platform"], text)
+                    card, _ = extract(llm, r["name"], r["platform"], text)
                 except BudgetExceeded:
-                    log("pipeline LLM cap reached; remaining rules wait for the next run")
-                    break
-                if card is None:
-                    run["rules"]["failed"] += 1
-                    continue
-                card["policy_hash"] = r["ph"]
-                upd.append(f"UPDATE programs SET rules = {d1.q(json.dumps(card, ensure_ascii=False))}, rules_hash = {d1.q(r['ph'])} WHERE id = {d1.q(r['id'])};")
-                run["rules"]["extracted"] += 1
+                    return r, None, "budget"
+                except Exception as e:  # noqa: BLE001
+                    return r, None, str(e)[:100]
+                return r, card, None
+
+            with ThreadPoolExecutor(max_workers=int(os.environ.get("EXTRACT_WORKERS", "6"))) as ex:
+                for r, card, err in ex.map(work, todo[: args.max_extract]):
+                    if err == "budget":
+                        run["rules"]["budget_stopped"] = True
+                        continue
+                    if card is None:
+                        run["rules"]["failed"] += 1
+                        continue
+                    card["policy_hash"] = r["ph"]
+                    upd.append(f"UPDATE programs SET rules = {d1.q(json.dumps(card, ensure_ascii=False))}, rules_hash = {d1.q(r['ph'])} WHERE id = {d1.q(r['id'])};")
+                    run["rules"]["extracted"] += 1
             run["rules"]["usd"] = round(llm.usage.usd, 4)
             ledger.flush(llm.usage.usd)
             if upd:

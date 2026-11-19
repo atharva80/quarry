@@ -23,7 +23,6 @@ from pathlib import Path
 
 import httpx
 import numpy as np
-
 from quarry_pipeline import embed
 from quarry_pipeline.llm import ACCOUNT_ID, Embedder, cf_token
 from quarry_pipeline.normalize import LABELS, load_state, normalise, search_text

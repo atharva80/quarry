@@ -1,0 +1,41 @@
+{
+  "eval": "rule extraction",
+  "split": "test",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "date": "2026-11-19T00:03Z",
+  "commit": "3d27fbd",
+  "labels": "agent-labelled (Claude Sonnet 5.5, two passes); owner reviews 20 (docs/evals.md)",
+  "policies": 100,
+  "failed": 0,
+  "accuracy": {
+    "scanning": 0.89,
+    "rate_limit": 0.98,
+    "required_header": 0.99,
+    "test_accounts": 0.96,
+    "excluded_classes": 0.96,
+    "safe_harbour": 0.93,
+    "bounty_table": 0.99,
+    "disclosure": 0.99
+  },
+  "accuracy_mean": 0.961,
+  "quote_faithfulness": 0.996,
+  "quotes_checked": 533,
+  "wrong_scanning_allowed": 2,
+  "wrong_scanning_allowed_ids": [
+    "bugcrowd:moneytreekkog",
+    "bugcrowd:sophos"
+  ],
+  "usd_per_policy": 0.00246,
+  "usd_total": 0.2459,
+  "latency_s_p50": 8.09,
+  "latency_s_p95": 13.14,
+  "scanning_confusion": {
+    "label=limited pred=limited": 40,
+    "label=limited pred=no": 4,
+    "label=limited pred=unclear": 4,
+    "label=no pred=no": 15,
+    "label=unclear pred=limited": 2,
+    "label=unclear pred=no": 1,
+    "label=unclear pred=unclear": 34
+  }
+}

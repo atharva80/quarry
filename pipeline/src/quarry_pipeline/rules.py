@@ -8,6 +8,7 @@ answers at zero.
 
 from __future__ import annotations
 
+import os
 import re
 import time
 import unicodedata
@@ -20,7 +21,7 @@ from .llm import LLM, BudgetExceeded
 from .policies import sections
 
 ROOT = Path(__file__).resolve().parents[3]
-PROMPT = (ROOT / "prompts" / "extract_rules.md").read_text()
+PROMPT = Path(os.environ.get("QUARRY_PROMPT_FILE") or ROOT / "prompts" / "extract_rules.md").read_text()
 FIELDS = ["scanning", "rate_limit", "required_header", "test_accounts", "excluded_classes", "safe_harbour",
           "bounty_table", "disclosure"]
 

@@ -28,6 +28,8 @@ export interface ToolCtx {
   onProfile?: (p: Profile) => Promise<void>;
   onFeedback?: (id: string, action: "save" | "dismiss", reason?: string) => Promise<void>;
   readOnly?: boolean;
+  /** eval-only fixture programs (admin-authenticated requests only; never stored) */
+  fixtures?: Fixture[];
 }
 
 const CATS = [
@@ -251,6 +253,11 @@ function rulesOf(ctx: ToolCtx, p: ProgramRow): Record<string, Rule> | null {
 }
 
 async function need(ctx: ToolCtx, ref: string): Promise<ProgramRow> {
+  const fx = fixtureFor(ctx, ref);
+  if (fx) {
+    note(ctx, fx);
+    return fx;
+  }
   const p = await resolveProgram(ctx.env, ref);
   if (!p) throw new ToolError(`no program matches "${ref.slice(0, 80)}"; use search_programs to find its id`);
   note(ctx, p);
@@ -258,6 +265,47 @@ async function need(ctx: ToolCtx, ref: string): Promise<ProgramRow> {
 }
 
 export class ToolError extends Error {}
+
+export interface Fixture {
+  id: string;
+  name: string;
+  platform: string;
+  policy: string;
+  rules: unknown;
+}
+
+export function fixtureRow(f: Fixture): ProgramRow {
+  return {
+    id: f.id,
+    platform: f.platform,
+    name: f.name,
+    url: `https://example.org/${f.id}`,
+    state: "open",
+    live: 1,
+    bounty: 1,
+    contest: 0,
+    reward_max: "$5,000",
+    max_usd: 5000,
+    listed_at: Math.floor(Date.now() / 1000) - 86400 * 30,
+    updated_at: null,
+    categories: "web wildcard",
+    tags: "[]",
+    n_in_scope: 1,
+    n_paid: 1,
+    new_7d: 0,
+    new_14d: 0,
+    new_30d: 0,
+    wild_new_30d: 0,
+    latest_added_at: null,
+    rules: f.rules ? JSON.stringify(f.rules) : null,
+  };
+}
+
+function fixtureFor(ctx: ToolCtx, ref: string): ProgramRow | null {
+  const r = ref.trim().toLowerCase();
+  const f = ctx.fixtures?.find((x) => x.id === ref || x.name.toLowerCase() === r || x.name.toLowerCase().includes(r) || r.includes(x.name.toLowerCase().split(" ")[0]));
+  return f ? fixtureRow(f) : null;
+}
 
 /** Map a technique to the policy fields that govern it, and compute a verdict in code. */
 export function verdictFor(technique: string, rules: Record<string, Rule> | null) {
@@ -344,7 +392,9 @@ export async function runTool(name: ToolName, rawArgs: unknown, ctx: ToolCtx): P
         filters: { platforms: a.platforms, categories: a.categories, bountyOnly: a.bounty_only, minUsd: a.min_usd },
       });
       for (const h of res.results) note(ctx, h.row);
-      return { mode: res.mode, results: res.results.map((h) => ({ ...summary(h.row), why: h.reasons })) };
+      const fx = (ctx.fixtures ?? []).map(fixtureRow).filter((r) => a.query.toLowerCase().includes(r.name.toLowerCase().split(" ")[0]));
+      for (const r of fx) note(ctx, r);
+      return { mode: res.mode, results: [...fx.map((r) => ({ ...summary(r), why: [] })), ...res.results.map((h) => ({ ...summary(h.row), why: h.reasons }))] };
     }
     case "get_program": {
       const p = await need(ctx, a.program);

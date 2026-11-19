@@ -29,7 +29,7 @@ API_STYLE = os.environ.get("LLM_API_STYLE", "responses")
 GATEWAY_PROVIDER = os.environ.get("LLM_GATEWAY_PROVIDER", "custom-quarry-commandcode")
 PRIMARY_MODEL = os.environ.get("LLM_MODEL", "deepseek/deepseek-v4.1-flash")
 BASE_URL = os.environ.get("LLM_BASE_URL", "https://api.commandcode.ai/provider/v1")
-USE_GATEWAY = os.environ.get("LLM_VIA_GATEWAY", "1" if os.environ.get("CLOUDFLARE_API_TOKEN") else "0") == "1"
+USE_GATEWAY = os.environ.get("LLM_VIA_GATEWAY", "0") == "1"  # gateway returns 502 for Command Code Responses (docs/decisions.md)
 FALLBACK_MODEL = "@cf/google/gemma-4-26b-a4b-it"
 EMBED_MODEL = "@cf/google/embeddinggemma-2"
 # USD per million tokens (input, output), from the providers' pricing pages (verified 2026-11-19)

@@ -39,6 +39,8 @@ export interface ChatOptions {
   /** user chat: never let AI Gateway store prompts/responses */
   noLog?: boolean;
   byok?: Byok | null;
+  /** evals only: skip the primary provider */
+  forceFallback?: boolean;
 }
 
 export class LimitReached extends Error {}
@@ -330,7 +332,7 @@ export async function chat(env: Env, messages: ChatMessage[], o: ChatOptions = {
     }
   }
   const b = await budget(env);
-  if (env.LLM_API_KEY && env.LLM_MODEL) {
+  if (env.LLM_API_KEY && env.LLM_MODEL && !o.forceFallback) {
     const ok = await b.reserve("primary", 0.002);
     if (ok) {
       try {

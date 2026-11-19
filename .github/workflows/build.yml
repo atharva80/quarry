@@ -27,18 +27,32 @@ jobs:
       PIPELINE_LLM_USD_CAP: ${{ vars.PIPELINE_LLM_USD_CAP || '0.50' }}
       WRANGLER_SEND_METRICS: "false"
     steps:
+      - name: check secrets
+        id: gate
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::notice::CLOUDFLARE_API_TOKEN is not set (see docs/secrets.md); skipping the build."
+            echo "skip=1" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/checkout@v4
+        if: steps.gate.outputs.skip != '1'
       - uses: astral-sh/setup-uv@v6
+        if: steps.gate.outputs.skip != '1'
         with: { python-version: "3.12" }
       - uses: actions/setup-node@v4
+        if: steps.gate.outputs.skip != '1'
         with: { node-version: "24", cache: npm }
       - run: npm ci --ignore-scripts && npm rebuild esbuild workerd
+        if: steps.gate.outputs.skip != '1'
       - run: uv sync --frozen
+        if: steps.gate.outputs.skip != '1'
       - name: restore policy cache
+        if: steps.gate.outputs.skip != '1'
         uses: actions/cache@v4
         with:
           path: .cache
           key: quarry-cache-${{ github.run_id }}
           restore-keys: quarry-cache-
       - name: build and deploy
+        if: steps.gate.outputs.skip != '1'
         run: uv run quarry-pipeline build ${{ inputs.force && '--force' || '' }}

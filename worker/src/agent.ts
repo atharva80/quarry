@@ -10,7 +10,7 @@ import type { Profile } from "../../ranking/score";
 import { programsByIds } from "./data";
 import { check, type FinalAnswer, trim, type Violation } from "./grounding";
 import { type Byok, type ChatMessage, chat, LimitReached, type ToolDef, Unavailable } from "./llm";
-import { runTool, type ToolCtx, ToolError, type ToolName, toolDefs } from "./tools";
+import { type Fixture, runTool, type ToolCtx, ToolError, type ToolName, toolDefs } from "./tools";
 
 export interface AgentState {
   profile: Profile;
@@ -188,7 +188,8 @@ export class QuarryAgent extends Agent<Env, AgentState> {
     }
   }
 
-  async chat(message: string, opts: { byok?: Byok | null; dailyCap?: number } = {}): Promise<ChatReply> {
+  async chat(message: string, opts: { byok?: Byok | null; dailyCap?: number; fixtures?: Fixture[]; forceFallback?: boolean } = {}): Promise<ChatReply> {
+    this.fixtures = opts.fixtures ?? [];
     this.ensureTables();
     let st = this.state;
     if (st.day !== today()) st = { ...st, day: today(), chatsToday: 0 };
@@ -209,6 +210,7 @@ export class QuarryAgent extends Agent<Env, AgentState> {
 
     const ctx: ToolCtx = {
       env: this.env,
+      fixtures: opts.fixtures,
       profile: this.state.profile,
       shown: new Set(this.state.shown),
       seen: new Map(),
@@ -243,6 +245,7 @@ export class QuarryAgent extends Agent<Env, AgentState> {
           maxTokens: 2000,
           noLog: true,
           byok: opts.byok,
+          forceFallback: opts.forceFallback,
         });
         model = r.model;
         tier = r.tier;
@@ -328,6 +331,7 @@ export class QuarryAgent extends Agent<Env, AgentState> {
           maxTokens: 1500,
           noLog: true,
           byok: opts.byok,
+          forceFallback: opts.forceFallback,
         });
         usage.usd += r.usage.usd;
         const call = r.tool_calls.find((c) => c.function.name === "final_answer");
@@ -361,7 +365,11 @@ export class QuarryAgent extends Agent<Env, AgentState> {
     };
   }
 
+  private fixtures: Fixture[] = [];
+
   private async policyText(id: string): Promise<string | null> {
+    const fx = this.fixtures.find((f) => f.id === id);
+    if (fx) return fx.policy;
     const r = await this.env.DB.prepare("SELECT text FROM policies WHERE program_id = ?1")
       .bind(id)
       .first<{ text: string }>();

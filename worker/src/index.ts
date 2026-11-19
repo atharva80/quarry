@@ -14,6 +14,7 @@ import { getProgramJson } from "./data";
 import { readByok } from "./llm";
 import { MAX_BYTES, matchHosts } from "./match";
 import { search } from "./search";
+import type { Fixture } from "./tools";
 
 export { BudgetDO, QuarryAgent };
 
@@ -67,6 +68,17 @@ async function verifyTurnstile(env: Env, token: string | undefined, remoteip: st
   const r = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body: form });
   const j = (await r.json()) as { success?: boolean };
   return !!j.success;
+}
+
+/** Constant-time admin check; false when ADMIN_TOKEN isn't configured. */
+function isAdmin(env: Env, header: string | undefined): boolean {
+  const t = env.ADMIN_TOKEN;
+  if (!t || t.length < 32 || !header) return false;
+  const want = `Bearer ${t}`;
+  if (header.length !== want.length) return false;
+  let diff = 0;
+  for (let i = 0; i < want.length; i++) diff |= want.charCodeAt(i) ^ header.charCodeAt(i);
+  return diff === 0;
 }
 
 function agent(env: Env, uid: string) {
@@ -163,7 +175,15 @@ app.post("/api/chat", async (c) => {
       turnstileOk = true;
     }
   }
-  const r = await a.chat(b.message, { byok });
+  // eval-only: fixture programs, accepted only with the admin token (never stored, never shown to users)
+  let fixtures: Fixture[] | undefined;
+  const fxHeader = c.req.header("x-quarry-eval-fixtures");
+  if (fxHeader) {
+    if (!isAdmin(c.env, c.req.header("authorization"))) throw new HttpError(403, "forbidden");
+    fixtures = JSON.parse(atob(fxHeader)) as Fixture[];
+  }
+  const admin = isAdmin(c.env, c.req.header("authorization"));
+  const r = await a.chat(b.message, { byok, fixtures, forceFallback: admin && c.req.header("x-quarry-eval-tier") === "fallback", dailyCap: isAdmin(c.env, c.req.header("authorization")) ? 10_000 : undefined });
   return c.json({ ...r, turnstile_ok: turnstileOk || undefined });
 });
 

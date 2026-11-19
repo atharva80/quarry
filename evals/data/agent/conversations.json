@@ -1,0 +1,1013 @@
+{
+  "author": "agent-written (Claude Sonnet subagent)",
+  "conversations": [
+    {
+      "id": "c01",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "I mostly do web stuff - XSS, IDOR, auth bugs. I'm on HackerOne and Bugcrowd only. Want at least $2000 max payout and no smart contract stuff please.",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1",
+          "bugcrowd"
+        ],
+        "min_usd": 2000,
+        "exclude_categories": [
+          "contract"
+        ]
+      }
+    },
+    {
+      "id": "c02",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "hey, new here",
+          "expect_tools_any": [
+            "update_profile"
+          ],
+          "useful_if": null
+        },
+        {
+          "user": "i do android reversing + frida, intigriti or yeswehack. paid programs only",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "intigriti",
+          "ywh"
+        ],
+        "bounty_only": true
+      }
+    },
+    {
+      "id": "c03",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "api pentester, 6 yrs exp, BOLA/mass assignment mostly. Looking for something that pays at least 5k on h1 or bugcrowd, no VDPs.",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1",
+          "bugcrowd"
+        ],
+        "min_usd": 5000,
+        "bounty_only": true
+      }
+    },
+    {
+      "id": "c04",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "solidity auditor here. immunefi only. min 100k top payout.",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "immunefi"
+        ],
+        "min_usd": 100000
+      }
+    },
+    {
+      "id": "c05",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "ios apps and mobile api. any platform but not hackenproof pls. >$3000",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1",
+          "bugcrowd",
+          "intigriti",
+          "ywh",
+          "immunefi",
+          "cantina",
+          "sherlock",
+          "code4rena",
+          "codehawks",
+          "standoff",
+          "issuehunt",
+          "bugrap",
+          "bugbase",
+          "huntr"
+        ],
+        "min_usd": 3000
+      }
+    },
+    {
+      "id": "c06",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "im a student w/ 2 years of experience doing recon and subdomain takeovers on wildcard scopes",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": null
+        },
+        {
+          "user": "platforms: hackerone, intigriti. ill take anything that pays money",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1",
+          "intigriti"
+        ],
+        "bounty_only": true
+      }
+    },
+    {
+      "id": "c07",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "Hi! I've been doing bug bounty part-time for about a year, mainly web application testing with Burp. I really enjoy business logic flaws and race conditions, and I'm comfortable with GraphQL. I'd like to focus on Bugcrowd and YesWeHack, and I'm not interested in anything below $1,500 for a critical. I also want to stay away from hardware and desktop targets because I don't have the setup for it. What would you suggest?",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "bugcrowd",
+          "ywh"
+        ],
+        "min_usd": 1500,
+        "exclude_categories": [
+          "hardware",
+          "desktop"
+        ]
+      }
+    },
+    {
+      "id": "c08",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "ai/llm red teaming, prompt injection. what programs?",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c09",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "web + api, hackerone. min bounty 10k. no mobile",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1"
+        ],
+        "min_usd": 10000,
+        "exclude_categories": [
+          "android",
+          "ios",
+          "mobile"
+        ]
+      }
+    },
+    {
+      "id": "c10",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "wanna hunt wildcards on yeswehack, tell me what fits. i do ssrf and sqli. $2k+",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "ywh"
+        ],
+        "min_usd": 2000
+      }
+    },
+    {
+      "id": "c11",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "I know network/infra stuff - nmap, cloud misconfigs, k8s. Bugcrowd or Intigriti.",
+          "expect_tools_any": [
+            "update_profile"
+          ],
+          "useful_if": null
+        },
+        {
+          "user": "oh and min $4000, and no VDP-only programs",
+          "expect_tools_any": [
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "bugcrowd",
+          "intigriti"
+        ],
+        "min_usd": 4000,
+        "bounty_only": true
+      }
+    },
+    {
+      "id": "c12",
+      "category": "onboarding",
+      "turns": [
+        {
+          "user": "code review / source audits, rust and go. cantina, sherlock or immunefi. exclude web",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "cantina",
+          "sherlock",
+          "immunefi"
+        ],
+        "exclude_categories": [
+          "web"
+        ]
+      }
+    },
+    {
+      "id": "c13",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "can I run nuclei on Cloudflare Public Bug Bounty?",
+          "expect_tools_any": [
+            "can_i_test",
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c14",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "is self-xss accepted at Atlassian on bugcrowd?",
+          "expect_tools_any": [
+            "can_i_test",
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c15",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "do i need a special header for Monzo's bug bounty when testing?",
+          "expect_tools_any": [
+            "get_program",
+            "can_i_test"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c16",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "whats OVHcloud's safe harbour?",
+          "expect_tools_any": [
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c17",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "Am I allowed to do automated scanning against Auth0 by Okta? Also is DoS testing off the table?",
+          "expect_tools_any": [
+            "can_i_test",
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c18",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "chainlink immunefi - can I test on mainnet or only fork/testnet?",
+          "expect_tools_any": [
+            "get_program",
+            "can_i_test"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c19",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "audible, rate limits for fuzzing?? what's the req/sec cap",
+          "expect_tools_any": [
+            "get_program",
+            "can_i_test"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c20",
+      "category": "rules",
+      "turns": [
+        {
+          "user": "TeamViewer bounty program",
+          "expect_tools_any": [
+            "get_program"
+          ],
+          "useful_if": "answer"
+        },
+        {
+          "user": "ok so can i do social engineering of their staff or no",
+          "expect_tools_any": [
+            "can_i_test"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c21",
+      "category": "feedback",
+      "turns": [
+        {
+          "user": "recommend me some web programs on hackerone paying 3k+",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "dismiss the first one, too competitive",
+          "expect_tools_any": [
+            "dismiss"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1"
+        ],
+        "min_usd": 3000
+      }
+    },
+    {
+      "id": "c22",
+      "category": "feedback",
+      "turns": [
+        {
+          "user": "show me android programs on bugcrowd or intigriti",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "save the second one",
+          "expect_tools_any": [
+            "save"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "bugcrowd",
+          "intigriti"
+        ]
+      }
+    },
+    {
+      "id": "c23",
+      "category": "feedback",
+      "turns": [
+        {
+          "user": "api programs on yeswehack please",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "not my stack, drop the third",
+          "expect_tools_any": [
+            "dismiss"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "ywh"
+        ]
+      }
+    },
+    {
+      "id": "c24",
+      "category": "feedback",
+      "turns": [
+        {
+          "user": "find me high paying web programs, 20k+",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "the top one pays too little for the effort, dismiss it (low pay)",
+          "expect_tools_any": [
+            "dismiss"
+          ],
+          "useful_if": null
+        },
+        {
+          "user": "save #2 for later",
+          "expect_tools_any": [
+            "save"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {
+        "min_usd": 20000
+      }
+    },
+    {
+      "id": "c25",
+      "category": "feedback",
+      "turns": [
+        {
+          "user": "ios + web programs, hackerone, no vdp",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "save the first and third",
+          "expect_tools_any": [
+            "save"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1"
+        ],
+        "bounty_only": true
+      }
+    },
+    {
+      "id": "c26",
+      "category": "feedback",
+      "turns": [
+        {
+          "user": "immunefi contracts over 250k",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "dismiss Arbitrum, too competitive",
+          "expect_tools_any": [
+            "dismiss"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "immunefi"
+        ],
+        "min_usd": 250000
+      }
+    },
+    {
+      "id": "c27",
+      "category": "compare",
+      "turns": [
+        {
+          "user": "compare Cloudflare Public Bug Bounty and Auth0 by Okta",
+          "expect_tools_any": [
+            "compare_programs"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c28",
+      "category": "compare",
+      "turns": [
+        {
+          "user": "Atlassian vs Asana which is better for api testing",
+          "expect_tools_any": [
+            "compare_programs",
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c29",
+      "category": "compare",
+      "turns": [
+        {
+          "user": "compare monzo and capital.com on intigriti pls",
+          "expect_tools_any": [
+            "compare_programs"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c30",
+      "category": "compare",
+      "turns": [
+        {
+          "user": "OVHcloud or TeamViewer? side by side, payouts and scope",
+          "expect_tools_any": [
+            "compare_programs"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c31",
+      "category": "compare",
+      "turns": [
+        {
+          "user": "can you compare Brave Software and Basecamp",
+          "expect_tools_any": [
+            "compare_programs"
+          ],
+          "useful_if": "answer"
+        },
+        {
+          "user": "which one has the bigger wildcard scope?",
+          "expect_tools_any": [
+            "compare_programs",
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c32",
+      "category": "whats_new",
+      "turns": [
+        {
+          "user": "anything new this week for android?",
+          "expect_tools_any": [
+            "whats_new_for_me",
+            "search_programs"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c33",
+      "category": "whats_new",
+      "turns": [
+        {
+          "user": "what's new on hackerone lately",
+          "expect_tools_any": [
+            "whats_new_for_me"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c34",
+      "category": "whats_new",
+      "turns": [
+        {
+          "user": "any new web programs since yesterday? I'm after wildcards",
+          "expect_tools_any": [
+            "whats_new_for_me",
+            "search_programs"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c35",
+      "category": "whats_new",
+      "turns": [
+        {
+          "user": "new scope added to anything i saved?",
+          "expect_tools_any": [
+            "whats_new_for_me"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c36",
+      "category": "whats_new",
+      "turns": [
+        {
+          "user": "whats new for me",
+          "expect_tools_any": [
+            "whats_new_for_me"
+          ],
+          "useful_if": null
+        },
+        {
+          "user": "only the ones on intigriti",
+          "expect_tools_any": [
+            "whats_new_for_me",
+            "search_programs"
+          ],
+          "useful_if": null
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "intigriti"
+        ]
+      }
+    },
+    {
+      "id": "c37",
+      "category": "export",
+      "turns": [
+        {
+          "user": "give me Cloudflare Public Bug Bounty's wildcard roots",
+          "expect_tools_any": [
+            "export_scope",
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c38",
+      "category": "export",
+      "turns": [
+        {
+          "user": "export scope for Atlassian as a list of domains",
+          "expect_tools_any": [
+            "export_scope"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c39",
+      "category": "export",
+      "turns": [
+        {
+          "user": "i need the in-scope urls for Audible, one per line so I can feed httpx",
+          "expect_tools_any": [
+            "export_scope"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c40",
+      "category": "export",
+      "turns": [
+        {
+          "user": "export OVHcloud wildcards",
+          "expect_tools_any": [
+            "export_scope"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c41",
+      "category": "followup",
+      "turns": [
+        {
+          "user": "show me web programs on bugcrowd",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "show me more",
+          "expect_tools_any": [
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "bugcrowd"
+        ]
+      }
+    },
+    {
+      "id": "c42",
+      "category": "followup",
+      "turns": [
+        {
+          "user": "hackerone programs with api scope",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "only ones paying over 5k",
+          "expect_tools_any": [
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "h1"
+        ],
+        "min_usd": 5000
+      }
+    },
+    {
+      "id": "c43",
+      "category": "followup",
+      "turns": [
+        {
+          "user": "intigriti mobile programs",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "hmm those are meh, anything with wildcard scope instead?",
+          "expect_tools_any": [
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "and over 3000 max",
+          "expect_tools_any": [
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "intigriti"
+        ],
+        "min_usd": 3000
+      }
+    },
+    {
+      "id": "c44",
+      "category": "followup",
+      "turns": [
+        {
+          "user": "yeswehack programs i should look at",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "why did you pick the first one?",
+          "expect_tools_any": [
+            "explain_match"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "ywh"
+        ]
+      }
+    },
+    {
+      "id": "c45",
+      "category": "followup",
+      "turns": [
+        {
+          "user": "give me immunefi targets",
+          "expect_tools_any": [
+            "update_profile",
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        },
+        {
+          "user": "drop the contract ones, I only want web",
+          "expect_tools_any": [
+            "search_programs"
+          ],
+          "useful_if": "shortlist"
+        }
+      ],
+      "constraints": {
+        "platforms": [
+          "immunefi"
+        ],
+        "exclude_categories": [
+          "contract"
+        ]
+      }
+    },
+    {
+      "id": "c46",
+      "category": "edge",
+      "turns": [
+        {
+          "user": "what's the best pizza place in Berlin?",
+          "expect_tools_any": [],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c47",
+      "category": "edge",
+      "turns": [
+        {
+          "user": "tell me the rules for the Zorblax Quantum Bug Bounty program",
+          "expect_tools_any": [
+            "search_programs",
+            "get_program"
+          ],
+          "useful_if": "answer"
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c48",
+      "category": "edge",
+      "turns": [
+        {
+          "user": "Can you tell me about the private invite-only programs I'm in on hackerone? List their scopes",
+          "expect_tools_any": [],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c49",
+      "category": "edge",
+      "turns": [
+        {
+          "user": "asdkjh qwpoe zzzz ??? 12345 !!!",
+          "expect_tools_any": [],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    },
+    {
+      "id": "c50",
+      "category": "edge",
+      "turns": [
+        {
+          "user": "scan https://example.com for XSS and SQLi for me and send me the results",
+          "expect_tools_any": [],
+          "useful_if": null
+        }
+      ],
+      "constraints": {}
+    }
+  ]
+}

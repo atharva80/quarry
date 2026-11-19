@@ -27,13 +27,15 @@ def load_meta(db: str) -> dict[str, dict]:
 
 
 def due(programs: list[dict], meta: dict[str, dict], now: float, per_platform_cap: int = 2000,
-        rotate_cap: int = 40) -> dict[str, list[dict]]:
+        rotate_cap: int = 40, failures: dict[str, float] | None = None) -> dict[str, list[dict]]:
     out: dict[str, list[dict]] = {p: [] for p in POLICY_PLATFORMS}
     rotated: dict[str, int] = {}
     for p in sorted(programs, key=lambda x: (not x["live"], -x["updated_at"])):
         plat = p["platform"]
         if plat not in POLICY_PLATFORMS or plat == "immunefi" or not p["live"]:
             continue
+        if now - (failures or {}).get(p["id"], 0) < REFRESH_DAYS * 86400:
+            continue  # failed recently (e.g. 403 on a non-public listing): back off a week
         m = meta.get(p["id"])
         if m and m.get("program_hash") == p["hash"] and now - (m.get("fetched_at") or 0) < REFRESH_DAYS * 86400:
             continue
@@ -62,7 +64,11 @@ def run(db: str | None, programs: list[dict], now: float, immunefi_etag: str | N
         per_platform_cap: int = 2000, log=print) -> dict:
     """Fetch due policies. Returns {"policies": {pid: Policy}, "stats": {...}, "immunefi_etag": str}."""
     meta = load_meta(db) if db else {}
-    todo = due(programs, meta, now, per_platform_cap)
+    failures: dict[str, float] = {}
+    if db:
+        rows = d1.query(db, "SELECT v FROM meta WHERE k = 'policy_failures'")
+        failures = json.loads(rows[0]["v"]) if rows else {}
+    todo = due(programs, meta, now, per_platform_cap, failures=failures)
     limiter = HostLimiter()
     got: dict[str, Policy] = {}
     stats = {"requests": 0, "fetched": 0, "unchanged": 0, "failed": 0, "by_platform": {}}
@@ -81,6 +87,8 @@ def run(db: str | None, programs: list[dict], now: float, immunefi_etag: str | N
                     got[p["id"]] = None  # type: ignore[assignment]  # touch fetched_at only
             elif res is None:
                 fail += 1
+                with lock:
+                    failures[p["id"]] = now
             else:
                 ok += 1
                 res.program_id = p["id"]
@@ -146,6 +154,7 @@ def run(db: str | None, programs: list[dict], now: float, immunefi_etag: str | N
                 stmts.append(d1.insert("policies", {"program_id": pid, "source_url": pol.source_url, "fetched_at": int(now),
                                                     "version": pol.version, "hash": pol.hash, "program_hash": ph,
                                                     "text": pol.text}, upsert_key="pk"))
-        if stmts:
-            stats["d1"] = d1.execute(db, stmts, chunk=200).__dict__
+        live_fail = {k: v for k, v in failures.items() if now - v < 30 * 86400}
+        stmts.append(d1.insert("meta", {"k": "policy_failures", "v": json.dumps(live_fail)}, upsert_key="pk"))
+        stats["d1"] = d1.execute(db, stmts, chunk=200).__dict__
     return {"policies": {k: v for k, v in got.items() if v}, "stats": stats, "immunefi_etag": etag, "changed": changed}
