@@ -18,7 +18,6 @@
 <p><a href="{{ p.u }}" rel="noopener noreferrer">Open on {{ p.pn }}</a>{% if p.updated_iso %} · updated {{ p.updated_iso[:10] }}{% endif %}</p>
 {% if p.cat %}<ul class="chips">{% for c in p.cat %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
 
-<div data-island="program-tools" data-id="{{ p.id }}" data-path="/data/p/{{ p.p }}/{{ p.id[(p.p | length) + 1:] }}.json"></div>
 
 <h2 id="rules">Rules</h2>
 <div class="panel">
@@ -51,6 +50,7 @@
 {% endif %}
 </div>
 
+<div data-island="program-tools" data-id="{{ p.id }}" data-path="{{ p.json_path }}"></div>
 {% if p.hunter %}
 <h2>Hunter stats</h2>
 <ul class="plain">

@@ -57,10 +57,10 @@
     "LLM_PRICE_OUT": "1.20",
     "FALLBACK_PRICE_IN": "0.10",
     "FALLBACK_PRICE_OUT": "0.30",
-    "DAILY_LLM_USD_CAP": "0.50",
+    "DAILY_LLM_USD_CAP": "2.00",
     "FALLBACK_NEURON_CAP": "8000",
     "CHAT_DAILY_CAP": "40",
-    "TURNSTILE_SITEKEY": "",
+    "TURNSTILE_SITEKEY": "0x4AAAAAAGH3mMOx7EJ_1rKP",
     "TELEGRAM_BOT_USERNAME": "",
     "VAPID_PUBLIC_KEY": "",
     "VAPID_SUBJECT": "https://github.com/atharva80/quarry"

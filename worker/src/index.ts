@@ -166,7 +166,7 @@ app.post("/api/chat", async (c) => {
   }
   const a = await agent(c.env, b.uid);
   let turnstileOk = false;
-  if (c.env.TURNSTILE_SECRET) {
+  if (c.env.TURNSTILE_SECRET && !isAdmin(c.env, c.req.header("authorization"))) {
     const st = await a.getState();
     if (!st.turnstileOk) {
       if (!(await verifyTurnstile(c.env, b.turnstile, ip(c.req.raw))))
@@ -198,7 +198,7 @@ app.post("/api/ask", async (c) => {
   await limit(c.env.RL_CHAT, `ask:${b.uid}`);
   await limit(c.env.RL_API, `ask-ip:${ip(c.req.raw)}`);
   let turnstileOk = false;
-  if (c.env.TURNSTILE_SECRET) {
+  if (c.env.TURNSTILE_SECRET && !isAdmin(c.env, c.req.header("authorization"))) {
     const a = await agent(c.env, b.uid);
     if (!(await a.getState()).turnstileOk) {
       if (!(await verifyTurnstile(c.env, b.turnstile, ip(c.req.raw))))

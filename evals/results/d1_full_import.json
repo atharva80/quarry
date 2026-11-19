@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-19T00:14Z",
+  "commit": "273f4ad",
+  "database": "quarry-db-scratch",
+  "programs": 3442,
+  "statements": 10727,
+  "rows_written": 14570,
+  "rerun_statements": 0,
+  "layout": "programs + programs_fts + recent_assets (90 d), as shipped"
+}

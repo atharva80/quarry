@@ -93,6 +93,7 @@ export function excludedBy(p: CatalogProgram, profile: Profile): string | null {
     return "not on your platforms";
   if (isHard(profile, "vdp_ok") && profile.vdp_ok === false && !p.b) return "VDP (no bounty)";
   const minB = profile.min_bounty ?? 0;
+  if (isHard(profile, "min_bounty") && minB > 0 && !p.b) return "VDP (no bounty, below your minimum)";
   if (isHard(profile, "min_bounty") && minB > 0 && p.usd > 0 && p.usd < minB) return `max bounty below $${minB}`;
   if (isHard(profile, "exclude") && profile.exclude?.length) {
     const ex = new Set(profile.exclude);

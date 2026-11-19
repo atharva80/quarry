@@ -169,6 +169,7 @@ def build(programs: list[dict], changes: dict | None, status: dict | None, rules
                 "hunter": p["hunter"], "when": p["when"], "reward_min": p["reward_min"],
                 "listed_source": p["listed_source"], "listed_iso": iso(p["listed_at"]), "updated_iso": iso(p["updated_at"])}
         page_path, json_path = program_path(p["id"])
+        full["json_path"] = json_path
         write_json(out / json_path.lstrip("/"), full)
         state = "accepting reports" if p["live"] else p["state"]
         desc = (f"{p['name']} on {p['platform_name']}: {p['n_in_scope']} in-scope assets, "

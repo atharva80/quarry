@@ -43,7 +43,9 @@ function Onboarding({
     hours_per_week: 10,
     ...initial,
   });
-  const set = (patch: Partial<Profile>) => setP({ ...p, ...patch });
+  const set = (patch: Partial<Profile>) => setP((prev) => ({ ...prev, ...patch }));
+  const flip = (key: "skills" | "assets" | "platforms" | "exclude", v: string) =>
+    setP((prev) => ({ ...prev, [key]: toggle((prev[key] as string[] | undefined) ?? [], v) }));
   const skills = p.skills ?? [];
   const assets = p.assets ?? [];
   const plats = p.platforms ?? [];
@@ -62,7 +64,7 @@ function Onboarding({
         <legend>Skills</legend>
         <div class="chip-row">
           {SKILLS.map((s) => (
-            <Toggle key={s} on={skills.includes(s)} onClick={() => set({ skills: toggle(skills, s) })}>
+            <Toggle key={s} on={skills.includes(s)} onClick={() => flip("skills", s)}>
               {s}
             </Toggle>
           ))}
@@ -72,7 +74,7 @@ function Onboarding({
         <legend>Asset types</legend>
         <div class="chip-row">
           {ASSET_TYPES.map((s) => (
-            <Toggle key={s} on={assets.includes(s)} onClick={() => set({ assets: toggle(assets, s) })}>
+            <Toggle key={s} on={assets.includes(s)} onClick={() => flip("assets", s)}>
               {s}
             </Toggle>
           ))}
@@ -82,7 +84,7 @@ function Onboarding({
         <legend>Platforms (none selected = any)</legend>
         <div class="chip-row">
           {platforms.map(([k, n]) => (
-            <Toggle key={k} on={plats.includes(k)} onClick={() => set({ platforms: toggle(plats, k) })}>
+            <Toggle key={k} on={plats.includes(k)} onClick={() => flip("platforms", k)}>
               {n}
             </Toggle>
           ))}
@@ -104,13 +106,13 @@ function Onboarding({
           <Toggle on={p.vdp_ok !== false} onClick={() => set({ vdp_ok: p.vdp_ok === false })}>
             VDPs (no bounty) ok
           </Toggle>
-          <Toggle on={exclude.includes("contract")} onClick={() => set({ exclude: toggle(exclude, "contract") })}>
+          <Toggle on={exclude.includes("contract")} onClick={() => flip("exclude", "contract")}>
             no web3
           </Toggle>
-          <Toggle on={exclude.includes("hardware")} onClick={() => set({ exclude: toggle(exclude, "hardware") })}>
+          <Toggle on={exclude.includes("hardware")} onClick={() => flip("exclude", "hardware")}>
             no hardware
           </Toggle>
-          <Toggle on={exclude.includes("desktop")} onClick={() => set({ exclude: toggle(exclude, "desktop") })}>
+          <Toggle on={exclude.includes("desktop")} onClick={() => flip("exclude", "desktop")}>
             no desktop
           </Toggle>
         </div>

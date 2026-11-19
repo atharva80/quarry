@@ -8,7 +8,7 @@ each program allows, and pings you when something new fits.**
 ![demo](docs/demo.gif) <!-- GIF placeholder: record onboarding → For you → a rules card → chat -->
 
 3,442 programs from 15 platforms (1,559 open, 61,910 in-scope assets), from my public collector
-[bbwatch](https://github.com/atharva80/bbwatch), rebuilt hourly. Runs entirely on Cloudflare's free plan.
+[bbwatch](https://github.com/atharva80/bbwatch), rebuilt hourly ([corpus.json](evals/results/corpus.json)). Runs entirely on Cloudflare's free plan.
 
 ## What it does
 - **Onboarding → typed profile** in ~30 s (chips or chat): skills, asset types, platforms, minimum bounty, VDPs,
@@ -68,7 +68,7 @@ OPS_PLACEHOLDER
 |---|---|
 | Workers: 10 ms CPU per request, 100k requests/day | Everything heavy is precomputed hourly. Static pages, program JSON, the catalog and feeds are **assets**: free, uncapped, and still served after the 100k cap. The Worker runs only for `/api/*` and `/mcp`. |
 | No Vectorize budget worth using | 3,442 × 256 **int8** vectors in a 0.9 MB static file, brute-forced in a 228-byte **WebAssembly SIMD** kernel: CPU p50 2 ms / p95 6 ms ([m0_cpu.json](evals/results/m0_cpu.json)); plain JS was p95 20 ms on cold isolates. |
-| D1: 100k rows written/day | D1 stores only what the Worker queries. Full import: **14,570 rows** vs ~130k if every asset were a row ([m0_d1_writes.json](evals/results/m0_d1_writes.json)). Upserts only for changed rows; an unchanged re-run writes 0. |
+| D1: 100k rows written/day | D1 stores only what the Worker queries. Full import: **14,570 rows** ([d1_full_import.json](evals/results/d1_full_import.json)) vs ~130k projected if every asset were a row (21,675 per 1,000 programs, [m0_d1_writes.json](evals/results/m0_d1_writes.json)). Upserts only for changed rows; an unchanged re-run writes 0. |
 | Workers AI: 10k neurons/day | Embeddings cost 154 neurons/M tokens: embedding all 3,442 programs used ~70. The fallback LLM is the expensive part and has its own cap. |
 | LLM spend | Budget Durable Object: $0.50/day global cap, per-user daily cap, Turnstile before first chat, then the Workers AI fallback, then a friendly "daily limit reached". |
 | Durable Objects (SQLite) on Free | One Agents SDK DO per chatting user (memory, digests via alarms); one DO for the budget. A turn with a tool call: 6 ms CPU p95. |
